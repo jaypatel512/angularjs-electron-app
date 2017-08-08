@@ -1,6 +1,6 @@
 /* global require */
-var remote = require('remote'),
-    dialog = remote.require('dialog'),
+var remote = require('electron').remote,
+    dialog = remote.require('electron').dialog,
     exec = require('child_process').exec,
     Promise = require('bluebird'),
     fs = Promise.promisifyAll(require('fs-extra')),

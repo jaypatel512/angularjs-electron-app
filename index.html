@@ -3,15 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Build & Deploy</title>
+    <title>BlinkAI - Conversation engine for enterprise learning from every interaction.</title>
 
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="node_modules/angular-ui-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="node_modules/metismenu/dist/metisMenu.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap-dashboard.css" rel="stylesheet">
+    <!link href="css/style.css" rel="stylesheet">
+    <link href="css/blinkai.css" rel="stylesheet">
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!-- normal script imports etc  -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+    <script src="js/jquery.particleground.min.js"></script>
     <script src="script.js"></script>
   </head>
   <body ng-controller="AppCtrl">
@@ -22,5 +33,26 @@
     <script src="node_modules/requirejs/require.js"></script>
     <!-- load boot-script - it loads configs, routes, runs and bootstraps the app -->
     <script src="app/boot.js"></script>
+    <script type="text/javascript">
+$(function () {
+  $('#particles').particleground({
+    minSpeedX: 0.1,
+    maxSpeedX: 0.7,
+    minSpeedY: 0.1,
+    maxSpeedY: 0.7,
+    directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+    directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+    density: 10000, // How many particles will be generated: one particle every n pixels
+    dotColor: '#eee',
+    lineColor: '#eee',
+    particleRadius: 5, // Dot size
+    lineWidth: 0.7,
+    curvedLines: true,
+    proximity: 100, // How close two dots need to be before they join
+    parallax: false
+  });
+});
+    </script>
   </body>
 </html>
+

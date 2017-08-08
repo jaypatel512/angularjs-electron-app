@@ -1,3 +1,3 @@
 define({
-    'gitLab': 'https://gitlab.com/api/v3/'
+    'gitLab': 'http://localhost:8080/api/'
 });
