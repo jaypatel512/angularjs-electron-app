@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="col-md-12">
+    <img class="pull-left logo" src="img/blink_ai.png" width="90">
+    <h1 class="company-header">Blink AI</h1>
+    <h3 class="subheading">Please provide with below information to get started quickly !</h3>
+    <span class="clearfix"></span>
+    <hr>
+    <form class="form-horizontal" name="user" action="register" method="post">
+      <div class="form-group form-group-lg">
+        <label for="inputFullName" class="col-sm-2 control-label">Full Name</label>
+        <div class="col-sm-9">
+          <input type="text" id="inputFullName" name="fullName" class="form-control" placeholder="Full Name" required="" autofocus="">
+        </div>
+      </div>
+      <div class="form-group form-group-lg">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-9">
+          <input type="text" id="inputEmail" name="username" class="form-control dotted" placeholder="Email address" required="" autofocus="">
+        </div>
+      </div>
+      <div class="form-group form-group-lg">
+        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Keep it hard to guess" required="" autofocus="">
+        </div>
+      </div>
+      <div class="form-group form-group-lg">
+        <label for="inputPhone" class="col-sm-2 control-label">Phone Number</label>
+        <div class="col-sm-9">
+          <input type="number" id="inputPhone" name="phone" class="form-control" placeholder="Phone Number" required="" autofocus="">
+        </div>
+      </div>
+      <input type="hidden" name="_csrf" value="30fdf6fa-d473-4802-bb0d-3e427cf022fd">
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="register">Register Now
+        !
+      </button>
+    </form>
+    <div class="row">
+      <div class="col-md-6">
+        <a class="link" href="" ng-click="user_login()"><h4>Already a storeUser! Login here</h4></a>
+      </div>
+      <div class="col-md-6 pull-right" style="text-align: right">
+        <a class="gray link" href=""  ng-click="forgot_password()"><h4>Forgot Password</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="particles"></div>

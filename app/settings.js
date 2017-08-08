@@ -1,3 +1,4 @@
 define({
-    'gitLab': 'http://localhost:8080/api/'
+    'gitLab': 'https://demo8047881.mockable.io/api/',
+    'blinkai': 'https://demo8047881.mockable.io/api/'
 });

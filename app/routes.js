@@ -25,7 +25,17 @@ define([
         // app states
         .state('login', {
             url: '/login',
-            templateUrl: 'app/templates/login.html',
+            templateUrl: 'app/templates/user/login.html',
+            controller: 'LoginCtrl'
+        })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'app/templates/user/register.html',
+            controller: 'LoginCtrl'
+        })
+        .state('forgot_password', {
+            url: '/forgot-password',
+            templateUrl: 'app/templates/user/forgot-password.html',
             controller: 'LoginCtrl'
         })
         .state('base', {

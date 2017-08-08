@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron ."  
+    "start": "./node_modules/.bin/electron ."
   },
   "dependencies": {
     "almond": "~0.3.1",
@@ -13,6 +13,8 @@
     "angular-ui-router": "~0.2.15",
     "bluebird": "^2.10.1",
     "bootstrap": "^3.3.5",
+    "electron": "^1.6.11",
+    "electron-debug": "^1.4.0",
     "font-awesome": "^4.4.0",
     "fs-extra": "~0.24.0",
     "html-minifier": "0.8.0",
