@@ -5,7 +5,7 @@
     <h3 class="subheading">Please provide with below information to get started quickly !</h3>
     <span class="clearfix"></span>
     <hr>
-    <form class="form-horizontal" name="user" action="register" method="post">
+    <form class="form-horizontal" name="user" action="register" method="post" name="registerForm">
       <div class="form-group form-group-lg">
         <label for="inputFullName" class="col-sm-2 control-label">Full Name</label>
         <div class="col-sm-9">
@@ -30,9 +30,7 @@
           <input type="number" id="inputPhone" name="phone" class="form-control" placeholder="Phone Number" required="" autofocus="">
         </div>
       </div>
-      <input type="hidden" name="_csrf" value="30fdf6fa-d473-4802-bb0d-3e427cf022fd">
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="register">Register Now
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="register"  ng-disabled="!registerForm.$valid">Register Now
         !
       </button>
     </form>

@@ -8,9 +8,10 @@ define([
     app.service('gitlabService', [
         '$q',
         '$http',
+        '$state',
         'localStorageService',
         'pagerService',
-        function ($q, $http, localStorageService, pagerService) {
+        function ($q, $http,$state, localStorageService, pagerService) {
             this.login = function (params) {
                 var deferred = $q.defer();
 
@@ -123,6 +124,10 @@ define([
                 localStorageService.remove('privateToken');
                 localStorageService.remove('username');
                 localStorageService.remove('avatar');
+            };
+
+            this.dashboard = function () {
+              $state.go('dashboard');
             };
         }
     ]);

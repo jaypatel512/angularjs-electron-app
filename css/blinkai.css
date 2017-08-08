@@ -281,6 +281,9 @@ h1 {
     z-index: -2;
   }
 
+
+
+
   #particles {
     width: 100%;
     height: 100%;
@@ -305,3 +308,9 @@ h1 {
   .boolean { color: blue; }
   .null { color: magenta; }
   .key { color: red; }
+
+  .column-left
+  {
+    height:100%;
+    background:#4e585c;
+  }
