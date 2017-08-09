@@ -1,27 +1,29 @@
 define([
     'app',
-    'services/gitlab',
-    'directives/loadingSpinner'
+    'services/blinkai',
+    'directives/loadingSpinner',
+    'directives/displayMessage'
 ], function (app) {
     'use strict';
 
     app.controller('LoginCtrl', [
         '$scope',
         '$state',
-        'gitlabService',
-        function ($scope, $state, gitlabService) {
+        'blinkaiService',
+        function ($scope, $state, blinkaiService) {
             $scope.auth = {};
             $scope.isLoading = false;
 
             $scope.login = function () {
-                $scope.isLoading = true;
-              //  console.log('dddd');
-                gitlabService.login($scope.auth).then(function () {
-                    $state.go('base.dashboard');
-                }, function () {
-
-                }).finally(function () {
-                    $scope.isLoading = false;
+              $scope.isLoading = true;
+              blinkaiService.login($scope.auth).then(function (data) {
+                console.log(data);
+                $state.go('base.dashboard');
+              }, function (error) {
+                console.log(error);
+                $scope.message = error.message;
+              }).finally(function () {
+                $scope.isLoading = false;
                 });
             };
             $scope.user_register=function(){

@@ -1,6 +1,6 @@
 define([
   'app',
-  'services/gitlab',
+  'services/blinkai',
   'directives/sideMenu'
 ], function (app) {
   'use strict';
@@ -9,14 +9,14 @@ define([
     '$scope',
     '$state',
     'localStorageService',
-    'gitlabService',
-    function ($scope, $state, localStorageService, gitlabService) {
+    'blinkaiService',
+    function ($scope, $state, localStorageService, blinkaiService) {
         var oldSearchString;
 
         $scope.avatar = localStorageService.get('avatar');
         $scope.privateToken = localStorageService.get('privateToken');
         $scope.logout = function () {
-            gitlabService.logout();
+            blinkaiService.logout();
             $state.go('login');
         };
 

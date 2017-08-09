@@ -1,6 +1,6 @@
 define([
     'app',
-    'services/gitlab'
+    'services/blinkai'
 ], function (app) {
     'use strict';
 
@@ -9,9 +9,9 @@ define([
         '$location',
         '$state',
         'localStorageService',
-        'gitlabService',
-        function ($q, $location, $state, localStorageService, gitlabService) {
-            gitlabService.me().then(function () {
+        'blinkaiService',
+        function ($q, $location, $state, localStorageService, blinkaiService) {
+            blinkaiService.me().then(function () {
                 $state.go('base.dashboard');
             }, function () {
                 $state.go('login');

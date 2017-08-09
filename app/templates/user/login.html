@@ -8,10 +8,11 @@
     <span class="clearfix"></span>
     <hr/>
     <form role="form" class="form-horizontal" name="loginForm" ng-submit="!isLoading && loginForm.$valid && login()">
+      <display-message message="message"></display-message>
       <div class="form-group form-group-lg">
         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="text" id="inputEmail" name="username" class="form-control dotted" ng-model="auth.login"
+          <input type="text" id="inputEmail" name="username" class="form-control dotted" ng-model="auth.username"
                                                              placeholder="Email address" required  autofocus >
         </div>
       </div>
@@ -29,7 +30,7 @@
     </form>
     <br/>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 pull-left">
         <a class="link" href="" ng-click="user_register()"><h4>Register Now !</h4></a>
       </div>
       <div class="col-md-6 pull-right" style="text-align: right">

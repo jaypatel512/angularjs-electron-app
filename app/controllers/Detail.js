@@ -1,7 +1,7 @@
 /* global define, Build */
 define([
     'app',
-    'services/gitlab',
+    'services/blinkai',
     'directives/loadingSpinner'
 ], function (app) {
     'use strict';
@@ -15,9 +15,9 @@ define([
         '$modalInstance',
         '$loadingOverlay',
         'localStorageService',
-        'gitlabService',
+        'blinkaiService',
         'id',
-        function ($q, $location, $state, $scope, $timeout, $modalInstance, $loadingOverlay, localStorageService, gitlabService, id) {
+        function ($q, $location, $state, $scope, $timeout, $modalInstance, $loadingOverlay, localStorageService, blinkaiService, id) {
             var buildObject;
 
             $scope.isLoading = true;
@@ -31,7 +31,7 @@ define([
                 }
             };
 
-            gitlabService.getProject(id).then(function (res) {
+            blinkaiService.getProject(id).then(function (res) {
                 $scope.project = res;
             }).finally(function () {
                 $scope.isLoading = false;

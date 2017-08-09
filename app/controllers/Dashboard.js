@@ -1,6 +1,6 @@
 define([
   'app',
-  'services/gitlab'
+  'services/blinkai'
 ], function (app) {
   'use strict';
 
@@ -8,12 +8,12 @@ define([
     '$scope',
     '$loadingOverlay',
     '$modal',
-    'gitlabService',
+    'blinkaiService',
     'localStorageService',
-    function ($scope, $loadingOverlay, $modal, gitlabService, localStorageService) {
+    function ($scope, $loadingOverlay, $modal, blinkaiService, localStorageService) {
         $scope.privateToken = localStorageService.get('privateToken');
         $loadingOverlay.show();
-        gitlabService.getProjects().then(function (projects) {
+        blinkaiService.getProjects().then(function (projects) {
             $scope.projects = projects;
         }).finally(function () {
             $loadingOverlay.hide();
@@ -21,7 +21,7 @@ define([
 
         $scope.load = function (url) {
             $loadingOverlay.show();
-            gitlabService.getProjects(url).then(function (projects) {
+            blinkaiService.getProjects(url).then(function (projects) {
                 $scope.projects = projects;
             }).finally(function () {
                 $loadingOverlay.hide();
@@ -30,7 +30,7 @@ define([
 
         $scope.$on('search', function (event, searchString) {
             $loadingOverlay.show();
-            gitlabService.searchProjects(searchString).then(function (projects) {
+            blinkaiService.searchProjects(searchString).then(function (projects) {
                 $scope.projects = projects;
             }).finally(function () {
                 $loadingOverlay.hide();

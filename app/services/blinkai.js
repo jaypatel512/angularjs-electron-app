@@ -15,10 +15,13 @@ define([
                 var deferred = $q.defer();
 
                 $http.post(settings.blinkai + 'session', params).then(function (res) {
-                    localStorageService.set('privateToken', res.data.private_token);
-                    localStorageService.set('username', res.data.username);
-                    localStorageService.set('avatar', res.data.avatar_url);
-                    deferred.resolve(res.data);
+                  if (res.data.success == false) {
+                    return deferred.reject(res.data.error);
+                  }
+                  localStorageService.set('privateToken', res.data.private_token);
+                  localStorageService.set('username', res.data.username);
+                  localStorageService.set('image', res.data.avatar_url);
+                  deferred.resolve(res.data);
                 }, deferred.reject);
 
                 return deferred.promise;
