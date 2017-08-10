@@ -6,27 +6,35 @@ define([
 
   app.controller('DashboardCtrl', [
     '$scope',
+    '$state',
     '$loadingOverlay',
     '$modal',
+
     'blinkaiService',
     'localStorageService',
-    function ($scope, $loadingOverlay, $modal, blinkaiService, localStorageService) {
+    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService) {
         $scope.privateToken = localStorageService.get('privateToken');
         $loadingOverlay.show();
-        blinkaiService.getProjects().then(function (projects) {
-            $scope.projects = projects;
+        blinkaiService.getStores().then(function (stores) {
+          $scope.stores = stores;
         }).finally(function () {
             $loadingOverlay.hide();
         });
 
         $scope.load = function (url) {
             $loadingOverlay.show();
-            blinkaiService.getProjects(url).then(function (projects) {
-                $scope.projects = projects;
+            blinkaiService.getStores(url).then(function (stores) {
+                $scope.stores = stores;
+
             }).finally(function () {
                 $loadingOverlay.hide();
             });
         };
+
+        $scope.getStoreDetailFunction=function(store_id){
+          localStorageService.set('store_id',store_id);
+          $state.go('base.storedetail');
+        }
 
         $scope.$on('search', function (event, searchString) {
             $loadingOverlay.show();

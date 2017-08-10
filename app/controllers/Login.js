@@ -17,7 +17,7 @@ define([
             $scope.login = function () {
               $scope.isLoading = true;
               blinkaiService.login($scope.auth).then(function (data) {
-                console.log(data);
+                //console.log(data);
                 $state.go('base.dashboard');
               }, function (error) {
                 console.log(error);

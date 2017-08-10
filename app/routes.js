@@ -1,12 +1,14 @@
 define([
   'app',
   'services/gitlab',
+  'services/blinkai',
   // Load Controllers here
   'controllers/App',
   'controllers/Base',
   'controllers/Dashboard',
   'controllers/Detail',
-  'controllers/Login'
+  'controllers/Login',
+  'controllers/StoreDetail'
 ], function (app) {
   'use strict';
   // definition of routes
@@ -48,6 +50,11 @@ define([
             url: 'dashboard',
             templateUrl: 'app/templates/dashboard.html',
             controller: 'DashboardCtrl'
+        })
+        .state('base.storedetail', {
+            url: 'storedetail',
+            templateUrl: 'app/templates/store/detail.html',
+            controller: 'StoreDetailCtrl'
         });
 
     }

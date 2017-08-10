@@ -8,29 +8,21 @@
 <br>-->
 <div class="row">
   <h1 class="page-header"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</h1>
-    <div class="col-lg-6 col-sm-12" ng-repeat="project in projects.entries" style="cursor: pointer;" ng-click="openDetails(project.id)">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-file-code-o fa-5x" ng-if="!project.namespace.avatar.url"></i>
-                        <img ng-if="project.namespace.avatar.url" height="70" width="70" ng-src="https://gitlab.com{{project.namespace.avatar.url}}?private_token={{privateToken}}">
-                    </div>
-                    <div class="col-xs-9 text-right">hhhhh
-                        <div class=""><big><strong>{{project.namespace.name}}</strong></big></div>
-                        <div>{{formatDate(project.last_activity_at)}} - {{formatTime(project.last_activity_at)}}</div>
-                    </div>
-                </div>
-            </div>
-            <a>
-                <div class="panel-footer">
-                    <span class="pull-left">{{project.name}}</span>
-                    <span class="pull-right"><i class="fa fa-cogs"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
+  <div class="col-sm-8"></div>
+  <div class="col-sm-4">
+    <div class="rowvfluid">
+        <h3 class="sub-header">Stores</h3>
+        <div class="list-group">
+          <a  ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="list-group-item">
+            <h3 class="list-group-item-heading">{{store.name}}</h3>
+            <p class="list-group-item-text small">
+              <i class="fa fa-envelope" aria-hidden="true"></i> {{store.email}} |
+              <i class="fa fa-phone" aria-hidden="true"></i> {{store.phone}}
+            </p>
+          </a>
         </div>
     </div>
+  </div>
 </div>
 <!--<div class="row">
     <div class="col-lg-12">

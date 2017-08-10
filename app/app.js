@@ -14,7 +14,7 @@ define([
     'ui.router',
     'LocalStorageModule',
     'ui.bootstrap',
-    'ngLoadingOverlay'
+    'ngLoadingOverlay',
   ]);
   // return the app so you can require it in other components
   return app;

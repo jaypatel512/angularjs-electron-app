@@ -314,3 +314,8 @@ h1 {
     height:100%;
     background:#4e585c;
   }
+
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
