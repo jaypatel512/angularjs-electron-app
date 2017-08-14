@@ -40,19 +40,17 @@
             <div class="col-lg-2 column-left">
                 <ul class="nav navbar-top-links">
 
-
-                  <li class="dropdown">
-                    <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
-                        <img ng-src="{{avatar}}" width="40" height="40" ng-if="avatar" class="img-circle">  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-
-                  </li>
-                  <li><a ng-click="dashoboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
-                    <!-- /.dropdown -->
+                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
+                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Conversation</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
+                      <img ng-src="http://api.adorable.io/avatars/80/jitendra@atxlearning.com" width="40" height="40" class="img-circle1">  <i class="fa fa-caret-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user">
+                      <li><a ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                      </li>
+                  </ul>
+                </li>
                 </ul>
             </div>
             <div class="col-lg-10">

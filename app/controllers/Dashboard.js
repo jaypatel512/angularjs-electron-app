@@ -31,10 +31,15 @@ define([
             });
         };
 
+      
+
         $scope.getStoreDetailFunction=function(store_id){
           localStorageService.set('store_id',store_id);
           $state.go('base.storedetail');
         }
+
+
+
 
         $scope.$on('search', function (event, searchString) {
             $loadingOverlay.show();

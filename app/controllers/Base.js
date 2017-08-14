@@ -20,6 +20,10 @@ define([
             $state.go('login');
         };
 
+        $scope.dashboard=function(){
+          $state.go('base.dashboard');
+        }
+
         $scope.formatDate = function (dateString) {
             var date = new Date(dateString);
             return date.toLocaleDateString();
