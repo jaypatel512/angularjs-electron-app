@@ -30,9 +30,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="previous"> <button ng-disabled="currentPage <= 0" ng-click="currentPage=currentPage-1">Previous</button>
+          <li class="previous"> <button ng-disabled="currentPage <= 0" ng-click="clickPreviousStoreDetail()">Previous</button>
           </li>
-          <li class="next"> <button ng-disabled="currentPage >= conversations.entries.data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+          <li class="next"> <button ng-disabled="currentPage >= conversations.entries.data.length/pageSize - 1" ng-click="clickNextStoreDetail()">Next</button>
           </li>
 
           <li><a>{{currentPage+1}}/{{numberOfPages()}} of {{conversations.entries.data.length}}
