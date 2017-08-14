@@ -14,6 +14,8 @@ define([
     'localStorageService',
     function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService,$location) {
         $scope.privateToken = localStorageService.get('privateToken');
+        $scope.username = localStorageService.get('username');
+        $scope.avatar = localStorageService.get('avatar');
 
         if($scope.store_id){
             $state.go('base.storedetail');

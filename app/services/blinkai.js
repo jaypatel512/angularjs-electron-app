@@ -15,14 +15,14 @@ define([
                 var deferred = $q.defer();
                   //console.log(params);
                 $http.post(settings.blinkai + 'session', params).then(function (res) {
-                    //console.log(res.data);
+                    console.log(res.data);
                   if (res.data.success == false) {
                     return deferred.reject(res.data.error);
                   }
 
                   localStorageService.set('privateToken', res.data.data.privateToken);
                   localStorageService.set('username', res.data.data.username);
-                  localStorageService.set('image', res.data.data.avatar_url);
+                  localStorageService.set('avatar', res.data.data.avatar_url);
                   deferred.resolve(res.data);
                 }, deferred.reject);
 
@@ -59,7 +59,7 @@ define([
                         method: 'get'
                     };
 
-                $http(options).then(function (res) {//console.log(res.data);
+                $http(options).then(function (res) {console.log(res.data);
                     deferred.resolve({
                         entries: res.data
                     });

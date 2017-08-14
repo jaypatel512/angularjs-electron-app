@@ -12,9 +12,9 @@ define([
     'blinkaiService',
     function ($scope, $state, localStorageService, blinkaiService) {
         var oldSearchString;
-
-        $scope.avatar = localStorageService.get('avatar');
         $scope.privateToken = localStorageService.get('privateToken');
+        $scope.username = localStorageService.get('username');
+        $scope.avatar = localStorageService.get('avatar');
         $scope.logout = function () {
             blinkaiService.logout();
             $state.go('login');
