@@ -83,7 +83,7 @@ define([
               $http(options).then(function (res) {
                 //console.log(res.data);
                   deferred.resolve({'entries':res.data});
-                  
+
               }, deferred.reject);
 
               return deferred.promise;

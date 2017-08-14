@@ -14,6 +14,11 @@ define([
     'localStorageService',
     function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService,$location) {
         $scope.privateToken = localStorageService.get('privateToken');
+
+        if($scope.store_id){
+            $state.go('base.storedetail');
+        }
+
         $loadingOverlay.show();
         blinkaiService.getStores().then(function (stores) {
           $scope.stores = stores;
@@ -31,14 +36,11 @@ define([
             });
         };
 
-      
-
         $scope.getStoreDetailFunction=function(store_id){
+          $scope.store_id=localStorageService.get('store_id');
           localStorageService.set('store_id',store_id);
           $state.go('base.storedetail');
         }
-
-
 
 
         $scope.$on('search', function (event, searchString) {

@@ -21,6 +21,7 @@ define([
         };
 
         $scope.dashboard=function(){
+        //  $scope.store_id='';
           $state.go('base.dashboard');
         }
 

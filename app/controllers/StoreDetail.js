@@ -24,9 +24,7 @@ define([
             $loadingOverlay.hide();
         });
 
-        $scope.numberOfPages=function(){
-             return Math.ceil($scope.conversations.entries.data.length/$scope.pageSize);
-         }
+
         $scope.clickPreviousStoreDetail=function(){
           $scope.currentPage=$scope.currentPage-1;
 
@@ -34,6 +32,10 @@ define([
         $scope.clickNextStoreDetail=function(){
           $scope.currentPage=$scope.currentPage+1;
         }
+
+        $scope.numberOfPages=function(){
+             return Math.ceil($scope.conversations.entries.data.length/$scope.pageSize);
+         }
     }
   ]);
 });

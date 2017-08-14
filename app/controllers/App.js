@@ -1,9 +1,15 @@
 define([
     'app',
     'services/blinkai'
-], function (app) {
-    'use strict';
+],
 
+function (app) {
+    'use strict';
+    app.filter('roundup', function () {
+            return function (value) {
+                return Math.ceil(value);
+            };
+        });
     app.controller('AppCtrl', [
         '$q',
         '$location',
