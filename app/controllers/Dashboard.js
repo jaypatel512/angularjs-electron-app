@@ -1,7 +1,8 @@
 define([
   'app',
-  'services/blinkai'
-], function (app) {
+  'services/blinkai',
+  'settings',
+], function (app, settings) {
   'use strict';
 
   app.controller('DashboardCtrl', [
@@ -9,10 +10,9 @@ define([
     '$state',
     '$loadingOverlay',
     '$modal',
-
     'blinkaiService',
     'localStorageService',
-    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService) {
+    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService,$location) {
         $scope.privateToken = localStorageService.get('privateToken');
         $loadingOverlay.show();
         blinkaiService.getStores().then(function (stores) {

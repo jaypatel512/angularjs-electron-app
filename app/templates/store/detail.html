@@ -1,14 +1,10 @@
-<div class="row">
+  <div class="container-fluid">
   <h1 class="page-header"><i class="fa fa-comments-o" aria-hidden="true"></i> Conversations</h1>
-  <div class="col-sm-12">
     <div class="row-fluid">
-      <h3>{{store.data.store.name}}</h3>
+      <h3>{{conversations.entries.data[0].store.name}}</h3>
       <br>
     </div>
-  </div>
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -34,11 +30,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li class="previous disabled"><a href="">Previous</a>
+            <li class="previous"><a href="" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</a>
             </li>
-            <li class="next disabled"><a href="">Next</a>
+            <li class="next"><a href="" ng-disabled="currentPage >= conversations.entries.data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</a>
             </li>
-            <li><a href="#">0-0 of 0
+            <li><a>{{currentPage+1}}/{{numberOfPages()}} of {{conversations.entries.data.length}}
               results</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -57,6 +53,27 @@
         </tr>
         </thead>
         <tbody>
+          <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}">
+
+            <td><img src="{{conversation.user.image}}" alt=""/>{{conversation.user.identifier}}</td>
+            <td></td>
+            <td></td>
+            <td>{{conversation.channelIcon}}</td>
+                <!--<td>
+                  <a class="btn btn-link text-limit" href="/web/conversation?id=5982c1fc97387eb8a68a0d42">
+                  <img src="https://s3.amazonaws.com/muasir/1488206041_human.png" class="img img-rounded" style="margin-right: 5px" width="30" height="30">
+                  5125920917
+                  </a>
+                </td>
+                <td><a class="btn btn-link text-limit" href="/web/conversation?id=5982c1fc97387eb8a68a0d42">
+                  <i><b>"Tomorrow at 8 am"</b></i>
+                </a>
+                </td>
+                <td style="padding-top: 15px">Thu, Aug 3  @  11:56 AM</td>
+                <td>
+                  <i style="margin-right: 5px;" class="fa fa-2x fa-sms" aria-hidden="true" title="SMS"></i>
+                </td>-->
+              </tr>
         </tbody>
       </table>
     </div>
