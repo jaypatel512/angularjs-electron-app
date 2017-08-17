@@ -43,27 +43,6 @@ define([
           localStorageService.set('store_id',store_id);
           $state.go('base.storedetail');
         }
-
-
-        $scope.$on('search', function (event, searchString) {
-            $loadingOverlay.show();
-            blinkaiService.searchProjects(searchString).then(function (projects) {
-                $scope.projects = projects;
-            }).finally(function () {
-                $loadingOverlay.hide();
-            });
-        });
-
-        $scope.openDetails = function (id) {
-            $modal.open({
-                'templateUrl': 'app/templates/detail.html',
-                controller: 'DetailCtrl',
-                size: 'large',
-                resolve: {
-                    'id': id
-                }
-            });
-        };
     }
   ]);
 });

@@ -49,8 +49,14 @@
                     </ul>
                   </li>
                   <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
+                  </ul>
+                <ul class="store-list navbar-top-links">
+                  <li>Stores</li>
+                  <li ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item">{{store.name}}
+                  </li>
+                </ul>
+                <ul class="nav navbar-top-links">
                   <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Conversation</a></li>
-
                 </ul>
             </div>
             <div class="col-lg-10">

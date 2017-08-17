@@ -8,9 +8,10 @@ define([
   app.controller('BaseCtrl', [
     '$scope',
     '$state',
+    '$loadingOverlay',
     'localStorageService',
     'blinkaiService',
-    function ($scope, $state, localStorageService, blinkaiService) {
+    function ($scope, $state,$loadingOverlay, localStorageService, blinkaiService) {
         var oldSearchString;
         $scope.privateToken = localStorageService.get('privateToken');
         $scope.username = localStorageService.get('username');
@@ -25,22 +26,30 @@ define([
           $state.go('base.dashboard');
         }
 
-        $scope.formatDate = function (dateString) {
-            var date = new Date(dateString);
-            return date.toLocaleDateString();
+
+        $loadingOverlay.show();
+        blinkaiService.getStores().then(function (stores) {
+          $scope.stores = stores;
+        }).finally(function () {
+            $loadingOverlay.hide();
+        });
+
+        $scope.load = function (url) {
+            $loadingOverlay.show();
+            blinkaiService.getStores(url).then(function (stores) {
+                $scope.stores = stores;
+
+            }).finally(function () {
+                $loadingOverlay.hide();
+            });
         };
 
-        $scope.formatTime = function (dateString) {
-            var date = new Date(dateString);
-            return date.toLocaleTimeString();
-        };
+        $scope.getStoreDetailFunction=function(store_id){
+          $scope.store_id=localStorageService.get('store_id');
+          localStorageService.set('store_id',store_id);
+          $state.go('base.storedetail');
+        }
 
-        $scope.search = function () {
-            if ($scope.searchString || $scope.searchString !== oldSearchString) {
-                oldSearchString = $scope.searchString;
-                $scope.$broadcast('search', $scope.searchString);
-            }
-        };
     }
   ]);
 });

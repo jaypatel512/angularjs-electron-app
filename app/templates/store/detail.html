@@ -42,7 +42,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="row-fluid">
+  <div class="row-fluid converstaion">
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -55,8 +55,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}">
-
-            <td><img src="{{conversation.user.image}}" alt=""/>{{conversation.user.identifier}}</td>
+            <td><span ng-click="conversationDetail(conversation.id)"><img src="{{conversation.user.image}}" alt=""/>{{conversation.user.identifier}}</span></td>
             <td></td>
             <td></td>
             <td>{{conversation.channelIcon}}</td>

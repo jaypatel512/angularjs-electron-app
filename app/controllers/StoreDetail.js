@@ -18,7 +18,7 @@ define([
         $loadingOverlay.show();
 
         blinkaiService.getStoreDetail(localStorageService.get('store_id')).then(function (conversations) {
-        //  console.log(store);
+        //  console.log(conversations);
         $scope.conversations = conversations;
         }).finally(function () {
             $loadingOverlay.hide();
@@ -36,6 +36,13 @@ define([
         $scope.numberOfPages=function(){
              return Math.ceil($scope.conversations.entries.data.length/$scope.pageSize);
          }
+
+        $scope.conversationDetail=function(id){
+          blinkaiService.getconversationDetail(id).then(function (conversationList) {
+          $scope.conversationList = conversationList;
+          })
+
+        }
     }
   ]);
 });

@@ -68,6 +68,27 @@ define([
                 return deferred.promise;
             };
 
+        this.getconversationDetail=function(id){
+          var url = settings.blinkai + 'stores/' + id + '/conversations';
+          console.log(url);
+            var deferred = $q.defer(),
+            options = {
+                url: url,
+                headers: {
+                    'PRIVATE-TOKEN': localStorageService.get('privateToken')
+                },
+                method: 'get'
+            };
+
+            $http(options).then(function (res) {
+              //console.log(res.data);
+                deferred.resolve({'entries':res.data});
+
+            }, deferred.reject);
+
+            return deferred.promise;
+        }
+
         this.getStoreDetail= function(store_id){
             var url = settings.blinkai + 'stores/' + store_id + '/conversations';
             //console.log(url);
