@@ -8,7 +8,8 @@ define([
   'controllers/Dashboard',
   'controllers/Detail',
   'controllers/Login',
-  'controllers/StoreDetail'
+  'controllers/StoreDetail',
+  'controllers/ConversationChat'
 ], function (app) {
   'use strict';
   // definition of routes
@@ -55,6 +56,11 @@ define([
             url: 'storedetail',
             templateUrl: 'app/templates/store/detail.html',
             controller: 'StoreDetailCtrl'
+        })
+        .state('base.conversationChat', {
+            url: 'conversationchat',
+            templateUrl: 'app/templates/conversation/chat.html',
+            controller: 'ConversationChatCtrl'
         });
 
     }

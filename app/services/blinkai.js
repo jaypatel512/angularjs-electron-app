@@ -90,8 +90,8 @@ define([
             };
 
 
-        this.getconversationDetail=function(id){
-          var url = settings.blinkai + 'stores/' + id + '/conversations';
+        this.getconversationDetail=function(store_id,id){
+          var url = settings.blinkai + 'stores/' + store_id + '/conversations/'+ id;
           console.log(url);
             var deferred = $q.defer(),
             options = {

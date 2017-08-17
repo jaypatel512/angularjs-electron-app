@@ -6,11 +6,12 @@ define([
 
   app.controller('StoreDetailCtrl', [
     '$scope',
+    '$state',
     '$loadingOverlay',
     '$modal',
     'blinkaiService',
     'localStorageService',
-    function ($scope, $loadingOverlay, $modal, blinkaiService, localStorageService) {
+    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService) {
       $scope.pageSize = 1;
       $scope.storedata = [];
         $scope.currentPage=0;
@@ -38,8 +39,9 @@ define([
          }
 
         $scope.conversationDetail=function(id){
-          blinkaiService.getconversationDetail(id).then(function (conversationList) {
-          $scope.conversationList = conversationList;
+          blinkaiService.getconversationDetail(localStorageService.get('store_id'),id).then(function (conversationList) {
+            $scope.conversationList = conversationList;
+            $state.go('base.conversationChat')
           })
 
         }
