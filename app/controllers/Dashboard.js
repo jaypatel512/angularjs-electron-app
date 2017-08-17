@@ -17,9 +17,9 @@ define([
         $scope.username = localStorageService.get('username');
         $scope.avatar = localStorageService.get('avatar');
 
-        if($scope.store_id){
+        /*if($scope.store_id){
             $state.go('base.storedetail');
-        }
+        }*/
 
         $loadingOverlay.show();
         blinkaiService.getStores().then(function (stores) {
@@ -28,10 +28,25 @@ define([
             $loadingOverlay.hide();
         });
 
+        blinkaiService.getActivities($scope.store_id).then(function (activities) {
+            $scope.activities = activities;
+            console.log(activities);
+        }).finally(function () {
+            $loadingOverlay.hide();
+        });
+
         $scope.load = function (url) {
             $loadingOverlay.show();
             blinkaiService.getStores(url).then(function (stores) {
                 $scope.stores = stores;
+
+            }).finally(function () {
+                $loadingOverlay.hide();
+            });
+
+
+            blinkaiService.getActivities($scope.store_id).then(function (activities) {
+                $scope.activities = activities;
 
             }).finally(function () {
                 $loadingOverlay.hide();
