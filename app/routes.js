@@ -55,6 +55,12 @@ define([
             templateUrl: 'app/templates/store/detail.html',
             controller: 'StoreDetailCtrl'
         })
+
+        .state('base.storechange', {
+            url: 'storechange',
+            controller: 'StoreChangeCtrl'
+        })
+
         .state('base.conversationChat', {
             url: 'conversationchat',
             templateUrl: 'app/templates/conversation/chat.html',
