@@ -82,7 +82,7 @@ table th {
 }
 
 .page-header {
-  border: none;
+  /*border: none;*/
 }
 
 .sidebar {
@@ -334,3 +334,18 @@ h1 {
     text-transform: capitalize;
     margin:14px auto;
 }
+
+
+/*.store-list li{
+  color:#fff;
+  list-style:none;
+  margin-left:-20px;
+  font-size:18px;
+}
+
+.store-list .store-item{
+  font-size:14px;
+  margin-left:-10px;
+  cursor: pointer;
+}*/
+.converstaion td span{cursor: pointer;}

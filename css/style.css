@@ -1,7 +1,7 @@
 @import 'sb-admin-2.css';
 
 .navbar-top-links li a.header-avatar {
-    padding: 0px 15px 0px 15px;
+
     line-height: 50px;
 }
 
@@ -12,3 +12,50 @@
 .input-group.list {
     margin-top: 10px;
 }
+
+#page-wrapper
+{
+  margin: 0 0 0 0px;
+  padding:0 0 0 0px;
+}
+.dashboard-column-left
+{
+  z-index: 1;
+  position:fixed;
+  top:0;
+  left:0;
+  width:235px;
+  height:100%;
+  background:#566;
+  color: #fff;
+}
+.dashboard-column-right
+{
+  margin-left:245px;
+  min-height:100%;
+
+  overflow: hidden;
+}
+
+.navbar-top-links li{
+  display:block;
+  line-height: 35px;
+}
+.navbar-top-links li a{
+  color:#fff;
+}
+.navbar-top-links li a
+{
+  padding:0px;
+}
+.page-header
+{
+  margin:0px;
+}
+.row1{
+  min-width:500px;
+  clear:both;
+}
+.navbar-top-links .dropdown-menu li a{color:#000;}
+
+.navbar-top-links{padding-left:10px;}
