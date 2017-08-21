@@ -18,7 +18,7 @@ define([
         $scope.privateToken = localStorageService.get('privateToken');
         $loadingOverlay.show();
 
-        blinkaiService.getStoreDetail(localStorageService.get('store_id')).then(function (conversations) {
+        blinkaiService.getStoreDetail($scope.store_id).then(function (conversations) {
         //  console.log(conversations);
         $scope.conversations = conversations;
         }).finally(function () {

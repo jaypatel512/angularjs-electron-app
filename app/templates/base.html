@@ -1,44 +1,7 @@
 <div id="wrapper">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <!--<div class="navbar-header">
-            <a class="navbar-brand" href="index.html">{{dict.title}}</a>
-        </div>-->
-        <!-- /.navbar-header -->
-
-        <!-- /.navbar-top-links -->
-
-        <!--<div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu" side-menu>
-                    <li class="sidebar-search">
-                        <form name="searchForm" ng-submit="searchForm.$valid && search()">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" ng-model="searchString" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-disabled="!searchForm.$valid">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-
-                    </li>
-                    <li>
-                        <a ui-sref-active="active" ui-sref="base.dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                    </li>
-                </ul>
-            </div>-->
-            <!-- /.sidebar-collapse -->
-        </div>
-        <!-- /.navbar-static-side -->
-    </nav>
-
     <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-2 column-left">
-                <ul class="nav navbar-top-links">
+            <div class="dashboard-column-left">
+                <ul class="navbar-top-links">
                   <li class="dropdown">
                     <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
                         <img ng-src="https://api.adorable.io/avatars/80/{{username}}" width="40" height="40" class="img-circle1">  <i class="fa fa-caret-down"> {{username}}</i>
@@ -48,22 +11,23 @@
                         </li>
                     </ul>
                   </li>
-                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
+
                   </ul>
                 <ul class="store-list navbar-top-links">
+                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
+
                   <li>Stores</li>
-                  <li ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item">{{store.name}}
+                  <li ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item"># {{store.name}}
                   </li>
+                  <li><a ng-click="dashboard()"><i class="fa fa-comments-o fa-fw"></i> Conversation</a></li>
                 </ul>
-                <ul class="nav navbar-top-links">
-                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Conversation</a></li>
-                </ul>
+
             </div>
-            <div class="col-lg-10">
+            <div class="dashboard-column-right">
                 <ui-view></ui-view>
             </div>
             <!-- /.col-lg-12 -->
-        </div>
+
         <!-- /.row -->
     </div>
     <!-- /#page-wrapper -->

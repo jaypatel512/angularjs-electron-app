@@ -18,9 +18,7 @@ define([
     '$urlRouterProvider',
     '$loadingOverlayConfigProvider',
     function ($stateProvider, $urlRouterProvider, $loadingOverlayConfigProvider) {
-
       $loadingOverlayConfigProvider.defaultConfig('<div class="text-center"><i class="fa fa-refresh fa-spin"></i><br><b>Bitte Warten</b></div>');
-
       // url routes/states
       $urlRouterProvider.otherwise('login');
 

@@ -15,7 +15,6 @@ define([
                 var deferred = $q.defer();
                   //console.log(params);
                 $http.post(settings.blinkai + 'session', params).then(function (res) {
-                    console.log(res.data);
                   if (res.data.success == false) {
                     return deferred.reject(res.data.error);
                   }
@@ -92,7 +91,6 @@ define([
 
         this.getconversationDetail=function(store_id,id){
           var url = settings.blinkai + 'stores/' + store_id + '/conversations/'+ id;
-          console.log(url);
             var deferred = $q.defer(),
             options = {
                 url: url,
@@ -101,7 +99,6 @@ define([
                 },
                 method: 'get'
             };
-
             $http(options).then(function (res) {
               //console.log(res.data);
                 deferred.resolve({'entries':res.data});

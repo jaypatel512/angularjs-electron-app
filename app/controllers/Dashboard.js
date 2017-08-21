@@ -30,7 +30,7 @@ define([
 
         blinkaiService.getActivities($scope.store_id).then(function (activities) {
             $scope.activities = activities;
-            console.log(activities);
+            //console.log(activities);
         }).finally(function () {
             $loadingOverlay.hide();
         });
@@ -53,9 +53,10 @@ define([
             });
         };
 
-        $scope.getStoreDetailFunction=function(store_id){
-          $scope.store_id=localStorageService.get('store_id');
+      $scope.getStoreDetailFunction=function(store_id){
+          console.log(store_id);
           localStorageService.set('store_id',store_id);
+          $scope.store_id=localStorageService.get('store_id');
           $state.go('base.storedetail');
         }
     }
