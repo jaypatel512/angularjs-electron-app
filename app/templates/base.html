@@ -1,35 +1,35 @@
-<div id="wrapper">
-    <div id="page-wrapper">
-            <div class="dashboard-column-left">
-                <ul class="navbar-top-links">
-                  <li class="dropdown">
-                    <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
-                        <img ng-src="https://api.adorable.io/avatars/80/{{username}}" width="40" height="40" class="img-circle1">  <i class="fa fa-caret-down"> {{username}}</i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                  </li>
+<div class="pane-sm sidebar">
+      <ul class="navbar-top-links">
+        <li>
+          <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
+            <img ng-src="https://api.adorable.io/avatars/80/{{username}}" width="40" height="40" class="img-circle1">
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-caret-down"> {{username}}</i>
+          </a>
+        </li>
+        <li>
+          <a ng-click="logout()">Logout
+          </a>
+        </li>
+        <li><hr></li>
+        </ul>
 
-                  </ul>
-                <ul class="store-list navbar-top-links">
-                  <li><a ng-click="dashboard()"><i class="fa fa-sign-out fa-fw"></i> Dashboard</a></li>
-
-                  <li>Stores</li>
-                  <li ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item"># {{store.name}}
-                  </li>
-                  <li><a ng-click="dashboard()"><i class="fa fa-comments-o fa-fw"></i> Conversation</a></li>
-                </ul>
-
-            </div>
-            <div class="dashboard-column-right">
-                <ui-view></ui-view>
-            </div>
-            <!-- /.col-lg-12 -->
-
-        <!-- /.row -->
-    </div>
-    <!-- /#page-wrapper -->
+      <ul class="store-list navbar-top-links">
+        <li><a ng-click="dashboard()">Dashboard</a></li>
+        <li><a>Stores</a></li>
+        <li><a ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item"># {{store.name}}
+        </a></li>
+        <li><a ng-click="dashboard()">Conversation</a></li>
+      </ul>
 </div>
+
+  <div class="pane">
+    <ui-view></ui-view>
+  </div>
+
+
+
 <!-- /#wrapper -->

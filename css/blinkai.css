@@ -87,6 +87,8 @@ table th {
 
 .sidebar {
   background: linear-gradient(to bottom, rgba(64, 72, 82, 1) 5%, rgba(38, 43, 49, 0.70) 100%);
+  float:left;
+  margin-right: 15px;
 }
 
 .sidebar a {
