@@ -19,6 +19,45 @@
 
 .navbar-top-links{padding-left:10px;font-size:16px;}
 .pane-group ui-view{margin: 0px;}
-.user{
-  margin:0 auto;
+.login{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transform: -webkit-translate(-50%, -50%);
+   transform: -moz-translate(-50%, -50%);
+   transform: -ms-translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #c3c3c3;
 }
+.register{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transform: -webkit-translate(-50%, -50%);
+   transform: -moz-translate(-50%, -50%);
+   transform: -ms-translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #c3c3c3;
+}
+.forgot{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transform: -webkit-translate(-50%, -50%);
+   transform: -moz-translate(-50%, -50%);
+   transform: -ms-translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #c3c3c3;
+}
+
+.col-left{width:50%;float:left;text-align:center;}
+.col-right{width:50%;float:right;text-align:center;}
+.nav-group-title{color:#fff!important;}
+.nav-group-item:active, .nav-group-item.active{background:none;}
+.pane{overflow: auto;margin-left: 215px;}
+.header{width:100%;position:fixed;}
+.conversation{margin-top:110px; width: auto;}
+.table-striped span img{width:30px;}

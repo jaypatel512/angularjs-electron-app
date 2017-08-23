@@ -1,45 +1,38 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
-      <h1 class="page-header"><i class="fa fa-comment-o" aria-hidden="true"></i> <a href="/web/conversations?store=596be51bd1ac664a6b855324">Conversations</a>/Conversation</h1>
+<div class="header">
+  <h3 class="page-header"><span class="icon icon-chat"></span> Conversations/ Conversation</h3>
+  <div class="row-fluid">
+    <div>{{conversations.entries.data[0].store.name}}</div>
+    <!--<h3>AUTOPILOT <div class="toggle btn btn-primary" data-toggle="toggle" style="width: 63px; height: 34px;"><input id="toggle-autopilot" type="checkbox" checked="" data-toggle="toggle" data-onstyle="primary" data-offstyle="danger"><div class="toggle-group"><label class="btn btn-primary toggle-on">On</label><label class="btn btn-danger active toggle-off">Off</label><span class="toggle-handle btn btn-default"></span></div></div></h3>-->
+    <br>
+  </div>
+</div>
+
+<div class="conversation">
+  <div class="panel panel-primary chat-box">
+    <div class="panel-heading" id="accordion">
+      <span class="text-limit">
+      <i class="fa fa-sms" aria-hidden="true"></i> SMS Conversation with
+      <b>[5125920917]</b>
+      </span>
     </div>
-    <div class="col-sm-4 text-right">
-      <h3>AUTOPILOT <div class="toggle btn btn-primary" data-toggle="toggle" style="width: 63px; height: 34px;"><input id="toggle-autopilot" type="checkbox" checked="" data-toggle="toggle" data-onstyle="primary" data-offstyle="danger"><div class="toggle-group"><label class="btn btn-primary toggle-on">On</label><label class="btn btn-danger active toggle-off">Off</label><span class="toggle-handle btn btn-default"></span></div></div></h3>
+    <div class="panel-body" id="chat-panel">
+      <ul class="chat">
+
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <form class="form-horizontal" return false;>
+        <div class="form-group">
+          <input type="text" name="reply" id="reply" required="" class="form-control input-sm" placeholder="Reply ... ">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-warning btn-sm" type="submit" id="btn-chat"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
+          </span>
+        </div>
+      </form>
     </div>
   </div>
 
-  <div class="row">
-        <div class="col-sm-8">
-          <div class="panel panel-primary chat-box">
-            <div class="panel-heading" id="accordion">
-              <span class="text-limit">
-              <i class="fa fa-sms" aria-hidden="true"></i> SMS Conversation with
-              <b>[5125920917]</b>
-              </span>
-            </div>
-            <div class="panel-body" id="chat-panel">
-              <ul class="chat">
-
-              </ul>
-            </div>
-            <div class="panel-footer">
-              <script type="text/javascript">
-              
-              </script>
-              <form class="form-horizontal" return false;">
-                <div class="input-group">
-                  <input type="text" name="reply" id="reply" required="" class="form-control input-sm" placeholder="Reply ... ">
-                  <input type="hidden" name="id" value="5982c1fc97387eb8a68a0d42">
-                  <input type="hidden" name="_csrf" value="ca23ca4f-9b21-4e3f-ae27-a9f744b75ce6">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default btn-warning btn-sm" type="submit" id="btn-chat"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
-                  </span>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 chat-user-profile">
+      <!--<div class="col-sm-4 chat-user-profile">
             <img class="img pull-left" src="https://s3.amazonaws.com/muasir/1488206041_human.png" style="margin-right:10px" width="80" height="80"><h3 style="margin-top: 0px;" class="text-limit"> 5125920917</h3>
             <hr>
             <div class="clearfix"></div>
@@ -52,7 +45,5 @@
               <dt>Store</dt>
                 <dd><a target="_blank" href="https://facebook.com/401589906871916/messages">Douglas Mcdonald Store</a></dd>
             </dl>
-        </div>
-      </div>
-
+        </div>-->
 </div>

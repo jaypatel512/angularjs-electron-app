@@ -1,29 +1,23 @@
 <div class="pane-sm sidebar">
-      <ul class="navbar-top-links">
-        <li>
-          <a class="dropdown-toggle header-avatar" data-toggle="dropdown" href="#">
-            <img ng-src="https://api.adorable.io/avatars/80/{{username}}" width="40" height="40" class="img-circle1">
-          </a>
-        </li>
-        <li>
-          <a>
-            <i class="fa fa-caret-down"> {{username}}</i>
-          </a>
-        </li>
-        <li>
-          <a ng-click="logout()">Logout
-          </a>
-        </li>
-        <li><hr></li>
-        </ul>
+  <nav class="nav-group">
+    <h5 class="nav-group-title">User</h5>
+    <a class="nav-group-item active">
+      <span class="icon icon-user"></span>
+        {{username}}
+    </a>
+    <a class="nav-group-item active"  ng-click="logout()">
+      <span class="icon icon-logout"></span>
+      Logout
+    </a>
 
-      <ul class="store-list navbar-top-links">
-        <li><a ng-click="dashboard()">Dashboard</a></li>
-        <li><a>Stores</a></li>
-        <li><a ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)" class="store-item"># {{store.name}}
-        </a></li>
-        <li><a ng-click="dashboard()">Conversation</a></li>
-      </ul>
+    <a class="nav-group-item active" ng-click="dashboard()"><span class="icon icon-home"></span>Dashboard</a>
+
+    <h5 class="nav-group-title">Stores</h5>
+    <a class="nav-group-item active" ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)"><span class="icon icon-comment"></span>{{store.name}}
+    </a>
+    <a class="nav-group-item active" ng-click="dashboard()"><span class="icon icon-chat"></span> Conversation</a>
+  </nav>
+    
 </div>
 
   <div class="pane">
