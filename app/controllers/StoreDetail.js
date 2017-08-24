@@ -43,7 +43,6 @@ define([
             $scope.conversationList = conversationList;
             $state.go('base.conversationChat')
           })
-
         }
     }
   ]);

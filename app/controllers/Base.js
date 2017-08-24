@@ -35,7 +35,6 @@ define([
             $state.go('login');
         };
 
-
         $scope.dashboard=function(){
         //  $scope.store_id='';
           $state.go('base.dashboard');

@@ -4,15 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>BlinkAI - Conversation engine for enterprise learning from every interaction.</title>
-
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="node_modules/angular-ui-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="node_modules/metismenu/dist/metisMenu.min.css" rel="stylesheet">
-    <link href="css/bootstrap-dashboard.css" rel="stylesheet">
+    <link href="css/photon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/blinkai.css" rel="stylesheet">
     <!-- Insert this line above script imports  -->
@@ -23,36 +15,68 @@
     <script>if (window.module) module = window.module;</script>
     <script src="js/jquery.particleground.min.js"></script>
     <script src="script.js"></script>
+    <script src="menu.js"></script>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+
   </head>
   <body ng-controller="AppCtrl">
-    <ui-view></ui-view>
-    <!-- load requirejs config -->
-    <script src="require_config.js"></script>
-    <!-- load requirejs -->
-    <script src="node_modules/requirejs/require.js"></script>
 
-    <!-- load boot-script - it loads configs, routes, runs and bootstraps the app -->
-    <script src="app/boot.js"></script>
+    <script>
+      $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!Notification) {
+              alert('Desktop notifications not available in your browser. Try Chromium.');
+              return;
+            }
 
-    <script type="text/javascript">
-$(function () {
-  $('#particles').particleground({
-    minSpeedX: 0.1,
-    maxSpeedX: 0.7,
-    minSpeedY: 0.1,
-    maxSpeedY: 0.7,
-    directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
-    directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-    density: 10000, // How many particles will be generated: one particle every n pixels
-    dotColor: '#ff0000',
-    lineColor: '#ff0000',
-    particleRadius: 5, // Dot size
-    lineWidth: 0.7,
-    curvedLines: true,
-    proximity: 100, // How close two dots need to be before they join
-    parallax: false
-  });
-});
+            if (Notification.permission !== "granted")
+              Notification.requestPermission();
+          });
+
+        var socket = io.connect('http://localhost:3000');
+        socket.on('chat-message', function(msg){
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+              }  else {
+              var notification = new Notification('blikai notification', {
+                icon: 'https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2016-10-13/91248311202_5c477fb6a91b9fe36ecf_88.png',
+                body: msg,
+              });
+              notification.onclick = function () {
+                window.open("https://blinkai.slack.com/");
+              };
+            }
+        });
+      });
     </script>
+
+    <div class="window">
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Blink AI</h1>
+      </header>
+
+      <div class="window-content">
+        <div class="pane-group">
+
+          <ui-view></ui-view>
+
+        </div>
+      </div>
+
+      <footer class="toolbar toolbar-footer">
+        <h1 class="title"></h1>
+      </footer>
+      <!-- load requirejs config -->
+      <script src="require_config.js"></script>
+      <!-- load requirejs -->
+      <script src="node_modules/requirejs/require.js"></script>
+
+      <!-- load boot-script - it loads configs, routes, runs and bootstraps the app -->
+      <script src="app/boot.js"></script>
+  </div>
   </body>
 </html>

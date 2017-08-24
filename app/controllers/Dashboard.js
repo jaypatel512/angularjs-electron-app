@@ -54,7 +54,7 @@ define([
         };
 
       $scope.getStoreDetailFunction=function(store_id){
-          console.log(store_id);
+        //  console.log(store_id);
           localStorageService.set('store_id',store_id);
           $scope.store_id=localStorageService.get('store_id');
           $state.go('base.storedetail');

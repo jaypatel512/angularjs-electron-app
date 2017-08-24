@@ -16,16 +16,19 @@
       </span>
     </div>
     <div class="panel-body" id="chat-panel">
-      <ul class="chat">
-
+      <ul class="chat" id="chatlist">
+        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
+        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
+        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
+        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
       </ul>
     </div>
     <div class="panel-footer">
       <form class="form-horizontal" return false;>
         <div class="form-group">
-          <input type="text" name="reply" id="reply" required="" class="form-control input-sm" placeholder="Reply ... ">
+          <input type="text" name="reply" id="reply" ng-model="reply" required="" class="form-control input-sm" placeholder="Reply ... ">
           <span class="input-group-btn">
-            <button class="btn btn-default btn-warning btn-sm" type="submit" id="btn-chat"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
+            <a class="btn btn-default btn-warning btn-sm" ng-click="chatMessage(reply)" id="btn-chat">Send</a>
           </span>
         </div>
       </form>
