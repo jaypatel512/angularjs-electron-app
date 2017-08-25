@@ -16,6 +16,7 @@ define([
     'ui.bootstrap',
     'ngLoadingOverlay',
   ]);
+
   // return the app so you can require it in other components
   return app;
 });
