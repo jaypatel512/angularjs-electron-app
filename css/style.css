@@ -23,6 +23,8 @@
   position: absolute;
    top: 50%;
    left: 50%;
+   width:700px;
+   min-height:500px;
    transform: translate(-50%, -50%);
    transform: -webkit-translate(-50%, -50%);
    transform: -moz-translate(-50%, -50%);
@@ -34,6 +36,8 @@
   position: absolute;
    top: 50%;
    left: 50%;
+   width:700px;
+   min-height:500px;
    transform: translate(-50%, -50%);
    transform: -webkit-translate(-50%, -50%);
    transform: -moz-translate(-50%, -50%);
@@ -45,6 +49,8 @@
   position: absolute;
    top: 50%;
    left: 50%;
+   width:700px;
+   min-height:500px;
    transform: translate(-50%, -50%);
    transform: -webkit-translate(-50%, -50%);
    transform: -moz-translate(-50%, -50%);
