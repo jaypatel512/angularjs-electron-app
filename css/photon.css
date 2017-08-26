@@ -1,10 +1,10 @@
 /*!
  * =====================================================
- * Photon v0.1.1
+ * Photon v0.1.2
  * Copyright 2015 Connor Sears
  * Licensed under MIT (https://github.com/connors/proton/blob/master/LICENSE)
  *
- * v0.1.1 designed by @connors.
+ * v0.1.2 designed by @connors.
  * =====================================================
  */
 
@@ -651,7 +651,7 @@ textarea {
   position: relative;
   overflow-y: auto;
   flex: 1;
-  border-left: 0px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 .pane:first-child {
   border-left: 0;
