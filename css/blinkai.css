@@ -6,10 +6,10 @@ input, select, textarea {
   font-weight: 300;
 }
 
-body {
+/*body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #4e585c;
-}
+}*/
 
 a:hover {
   text-decoration: none;
