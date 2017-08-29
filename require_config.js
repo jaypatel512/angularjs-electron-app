@@ -8,7 +8,8 @@ var require = {
         'bootstrap': '../node_modules/bootstrap/dist/js/bootstrap.min',
         'ui-bootstrap': '../node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.min',
         'ng-loading-overlay': '../node_modules/ng-loading-overlay/src/ng-loading-overlay.min',
-        'metis': '../node_modules/metismenu/dist/metisMenu.min'
+        'metis': '../node_modules/metismenu/dist/metisMenu.min',
+        'socket': '../node_modules/socket.io/dist/socket',
     },
     shim: {
         'metis': {
@@ -33,11 +34,15 @@ var require = {
         },
         'ng-loading-overlay': {
             deps: ['angular']
+        },
+        'socket': {
+            deps: ['angular']
         }
     },
     priority: [
         'angular',
         'ui-bootstrap',
-        'metis'
+        'metis',
+        'socket',
     ]
 };

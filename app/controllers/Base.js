@@ -13,9 +13,7 @@ define([
     'localStorageService',
     'blinkaiService',
     function ($scope, $state,$loadingOverlay, localStorageService, blinkaiService) {
-
       $state.go('base.storedetail');
-
     }
   ]);
 

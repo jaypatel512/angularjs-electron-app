@@ -27,8 +27,12 @@ app.on('ready', function() {
     'use strict';
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 2024,
-        height: 1768,
+      /*  width: 2024,
+        height: 1768,*/
+        width: 600,
+        height: 300,
+        minHeight: 200,
+        minWidth: 500,
         title: 'Build & Deploy',
         'auto-hide-menu-bar': true,
     });
