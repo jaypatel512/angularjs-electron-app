@@ -14,7 +14,9 @@ define([
     'LocalStorageModule',
     'ui.bootstrap',
     'ngLoadingOverlay',
+
   ]);
+
 
   app.factory('socket', function ($rootScope) {
   var socket = io.connect('http://localhost:3000');
@@ -28,15 +30,38 @@ define([
       });
     },
     emit: function (eventName, data, callback) {
-      //console.log(eventName);
-      socket.emit(eventName, data, function () {
+      //console.log(data.message);
+      document.addEventListener('DOMContentLoaded', function () {
+         if (!Notification) {
+           alert('Desktop notifications not available in your browser. Try Chromium.');
+           return;
+         }
+
+         if (Notification.permission !== "granted")
+           Notification.requestPermission();
+       });
+
+       socket.on('send:message', function(msg){
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+              }  else {
+              var notification = new Notification('blikai notification', {
+                icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+                body: msg,
+              });
+              notification.onclick = function () {
+                window.open("http://stackoverflow.com/a/13328397/1269037");
+              };
+            }
+        });
+      /*socket.emit(eventName, data, function () {
         var args = arguments;
         $rootScope.$apply(function () {
           if (callback) {
             callback.apply(socket, args);
           }
         });
-      })
+      })*/
     }
   };
 });
