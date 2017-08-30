@@ -8,7 +8,6 @@ define([
   'ng-loading-overlay'
 ], function (angular) {
   'use strict';
-
   // the app with its used plugins
   var app = angular.module('app', [
     'ui.router',
@@ -17,9 +16,8 @@ define([
     'ngLoadingOverlay',
   ]);
 
-
   app.factory('socket', function ($rootScope) {
-  var socket = io.connect();
+  var socket = io.connect('http://localhost:3000');
   return {
     on: function (eventName, callback) {
       socket.on(eventName, function () {
@@ -30,6 +28,7 @@ define([
       });
     },
     emit: function (eventName, data, callback) {
+      //console.log(eventName);
       socket.emit(eventName, data, function () {
         var args = arguments;
         $rootScope.$apply(function () {
@@ -41,7 +40,6 @@ define([
     }
   };
 });
-
   // return the app so you can require it in other components
   return app;
 });

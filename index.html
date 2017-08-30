@@ -26,15 +26,14 @@
 -->
 
 
-  <script src="/socket.io/socket.io.js"></script>
+  <!--<script src="/socket.io/socket.io.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-socket-io/socket.js"></script>
-
-  </head>
-  <body ng-controller="AppCtrl">
-
-  <!--  <script>
+  <script src="node_modules/angular-socket-io/socket.js"></script>-->
+  <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+   <script>
       $(function () {
         document.addEventListener('DOMContentLoaded', function () {
             if (!Notification) {
@@ -47,22 +46,24 @@
           });
 
         var socket = io.connect('http://localhost:3000');
-        socket.on('chat-message', function(msg){
+        socket.on('send:message', function(msg){
+
             if (Notification.permission !== "granted") {
                 Notification.requestPermission();
               }  else {
               var notification = new Notification('blikai notification', {
-                icon: 'https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2016-10-13/91248311202_5c477fb6a91b9fe36ecf_88.png',
+                icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
                 body: msg,
               });
               notification.onclick = function () {
-                window.open("https://blinkai.slack.com/");
+                window.open("http://stackoverflow.com/a/13328397/1269037");
               };
             }
         });
       });
-    </script>-->
-
+    </script>
+  </head>
+  <body ng-controller="AppCtrl">
     <div class="window">
       <!-- .toolbar-header sits at the top of your app -->
       <header class="toolbar toolbar-header">

@@ -13,11 +13,11 @@ define([
     'localStorageService',
     'socket',
     function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService,socket) {
-      $scope.chatMessage=function(reply){
+      $scope.chatMessage=function(message){
         const container = document.getElementById('chatlist');
         const li = document.createElement('li');
         // You would want to expand this out to include pertinent attributes, and timestamps, etc...
-        li.innerHTML = reply;
+        li.innerHTML = message;
         container.appendChild(li);
         document.getElementById('reply').value='';
         document.getElementById('reply').focus();
@@ -36,7 +36,9 @@ define([
           $scope.users = data.users;
         });
 
+
         socket.on('send:message', function (message) {
+          console.log(message);
           $scope.messages.push(message);
         });
 
