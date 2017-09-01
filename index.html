@@ -45,7 +45,7 @@
               Notification.requestPermission();
           });
 
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect('http://localhost:9092');
         socket.on('send:message', function(msg){
             if (Notification.permission !== "granted") {
                 Notification.requestPermission();
