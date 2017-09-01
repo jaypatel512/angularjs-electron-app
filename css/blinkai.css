@@ -33,6 +33,10 @@ a:hover {
   background: linear-gradient(to left, rgba(28, 189, 236, 1) 5%, rgba(24, 126, 195, 1) 100%);
 }
 
+.nav-group>a {
+  cursor:pointer;
+}
+
 .navbar-inverse.admin {
   background-color: #a94442;
 }
