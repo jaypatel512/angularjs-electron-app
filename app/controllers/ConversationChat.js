@@ -24,11 +24,11 @@ define([
         container.appendChild(li);
         //socket.emit('send:message', {message: message});
         socket.on('notifications', eventHandler());
-
+        //console.log(localStorageService.get('conversation_id'));
         socket.emit('reply', {
           text: message,  // text
-          privateToken: '7162e1f8-6957-487f-93d1-9cafd6864f1d', // private Token received during login. Found in agent database
-          id: '5982c1fc97387eb8a68a0d42'  // conversationid. found in conversations. Try to use the one with Facebook.
+          privateToken: localStorageService.get('privateToken'), // private Token received during login. Found in agent database
+          id: localStorageService.get('conversation_id')  // conversationid. found in conversations. Try to use the one with Facebook.
         }, function(resp) {
           if (resp === true) {
             document.getElementById('reply').value='';
@@ -54,19 +54,10 @@ define([
     		container.appendChild(e);
     		container.appendChild(hr);
   	  }
-      //  var socket = io.connect('http://localhost:3000');
-        /*socket.on('connection', function(socket){
-          socket.on('chat-message', function(reply){
-            socket.emit('chat-message', reply);
-            console.log('test');
-          });
-        });
-        */
 
       }
 
-            // this is socket
-            // this is socket
+    
     }
   ]);
 });
