@@ -63,7 +63,10 @@
 .col-right{width:50%;float:right;text-align:center;}
 .nav-group-title{color:#fff!important;}
 .nav-group-item:active, .nav-group-item.active{background:none;}
-.pane{overflow: auto;margin-left: 215px;}
+.pane{overflow: auto;margin-left: 221px;}
 .header{width:100%;position:fixed;}
 .conversation{margin-top:110px; width: auto;}
 .table-striped span img{width:30px;}
+.reply-left{float:left;width:95%}
+.reply-right{float:left;width:5%;padding: 6px;
+    border-radius: 0px;}

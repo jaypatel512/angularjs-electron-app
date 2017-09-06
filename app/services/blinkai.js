@@ -58,7 +58,7 @@ define([
                         method: 'get'
                     };
 
-                $http(options).then(function (res) {console.log(res.data);
+                $http(options).then(function (res) {//console.log(res.data);
                     deferred.resolve({
                         entries: res.data
                     });
@@ -91,6 +91,7 @@ define([
 
         this.getconversationDetail=function(store_id,id){
           var url = settings.blinkai + 'stores/' + store_id + '/conversations/'+ id;
+//          console.log(url);
             var deferred = $q.defer(),
             options = {
                 url: url,
@@ -127,7 +128,7 @@ define([
               }, deferred.reject);
 
               return deferred.promise;
-            };
+        };
 
             this.logout = function () {
                 localStorageService.remove('privateToken');
