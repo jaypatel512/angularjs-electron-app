@@ -20,7 +20,7 @@ a:hover {
 }
 
 .btn-default:hover {
-  color: #fff;
+  color: #c3c3c3;
   background-color: #286090;
   border-color: #204d74
 }
@@ -53,7 +53,7 @@ a:hover {
 .profile {
   margin-top: 30px;
   padding-left: 20px;
-  color: #FFF;
+  color: #c3c3c3;
 }
 
 .box80 {
@@ -84,7 +84,7 @@ table th {
   padding: 10px;
   box-shadow: 0 0 15px #888;
   background:linear-gradient(to bottom, rgba(64, 72, 82, 1) 5%, rgba(38, 43, 49, 0.70) 100%);
-  color:#fff;
+  color:#c3c3c3;
 }
 
 .page-header {
@@ -100,7 +100,7 @@ table th {
 }
 
 .sidebar a {
-  color: #FFF;
+  color: #c3c3c3;
 }
 
 .sidebar .fa {
@@ -217,7 +217,7 @@ h1 {
 
 .chat-box .panel-body {
   overflow-y: scroll;
-  height: 700px;
+  height: 500px;
 }
 
 ::-webkit-scrollbar-track {
@@ -361,3 +361,7 @@ h1 {
   cursor: pointer;
 }*/
 .converstaion td span{cursor: pointer;}
+
+#chat-panel::-webkit-scrollbar{
+  width:0px;
+}

@@ -18,7 +18,7 @@
 .navbar-top-links .dropdown-menu li a{color:#000;}
 
 .navbar-top-links{padding-left:10px;font-size:16px;}
-.pane-group ui-view{margin: 0px;}
+.pane-group ui-view{margin: 0px;width:100%;}
 .login{
   position: absolute;
    top: 50%;
@@ -67,6 +67,12 @@
 .header{width:100%;position:fixed;}
 .conversation{margin-top:110px; width: auto;}
 .table-striped span img{width:30px;}
-.reply-left{float:left;width:95%}
+.reply-left{float:left;width:99.7%}
 .reply-right{float:left;width:5%;padding: 6px;
     border-radius: 0px;}
+
+#chat-footer{
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+}

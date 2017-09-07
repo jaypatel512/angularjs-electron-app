@@ -17,27 +17,22 @@
     </div>
     <div class="panel-body" id="chat-panel">
       <ul class="chat" id="chatlist">
-        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
-        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
-        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
-        <li> this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </li>
+
       </ul>
     </div>
     <div ng-repeat="message in messages">
       {{message}}
     </div>
-    <div class="panel-footer">
-      <form class="form-horizontal" return false;>
-        <div class="form-group">
-          <input type="text" name="reply" id="reply" ng-model="reply" required="" class="form-control input-sm reply-left" placeholder="Reply ... ">
-          <span class="input-group-btn">
-            <a class="btn btn-default btn-warning btn-sm reply-right" ng-click="chatMessage(reply)" id="btn-chat">Send</a>
-          </span>
-        </div>
-      </form>
-    </div>
+
   </div>
 
+  <div class="panel-footer" id="chat-footer">
+    <form class="form-horizontal" return false;>
+      <div class="form-group">
+        <input type="text" name="reply" id="reply" ng-model="reply" required="" class="form-control input-sm reply-left" placeholder="Reply ... " ng-enter="chatMessage(reply)">
+      </div>
+    </form>
+  </div>
       <!--<div class="col-sm-4 chat-user-profile">
             <img class="img pull-left" src="https://s3.amazonaws.com/muasir/1488206041_human.png" style="margin-right:10px" width="80" height="80"><h3 style="margin-top: 0px;" class="text-limit"> 5125920917</h3>
             <hr>

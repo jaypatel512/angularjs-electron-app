@@ -33,9 +33,9 @@ define([
           if (resp === true) {
             document.getElementById('reply').value='';
             document.getElementById('reply').focus();
-            alert("Sending successful.");
+            //alert("Sending successful.");
           } else {
-            alert("We seemed to have some issue getting acknowledgement back from server. Please try again");
+            //alert("We seemed to have some issue getting acknowledgement back from server. Please try again");
             document.getElementById('reply').focus();
           }
         });
@@ -47,17 +47,18 @@ define([
 		     }
 
   		function outputNotifications(message) {
-    		console.log(message);
+    		/*console.log(message);
     		var e = document.createElement('pre');
     		var hr = document.createElement('hr');
     		e.innerHTML = JSON.stringify(message, null, ' ');
     		container.appendChild(e);
     		container.appendChild(hr);
+        */
   	  }
 
       }
 
-    
+
     }
   ]);
 });

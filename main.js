@@ -29,10 +29,10 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow({
       /*  width: 2024,
         height: 1768,*/
-        width: 600,
-        height: 300,
-        minHeight: 200,
-        minWidth: 500,
+        width: 700,
+        height: 500,
+        minHeight: 500,
+        minWidth: 700,
         title: 'Build & Deploy',
         'auto-hide-menu-bar': true,
     });
