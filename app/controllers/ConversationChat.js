@@ -41,19 +41,34 @@ define([
         });
 
         function eventHandler() {
-    			return function (message) {
-      			  outputNotifications(message);
+    			return function (data) {
+      			  outputNotifications(data);
       			}
 		     }
 
-  		function outputNotifications(message) {
-    		/*console.log(message);
-    		var e = document.createElement('pre');
-    		var hr = document.createElement('hr');
-    		e.innerHTML = JSON.stringify(message, null, ' ');
-    		container.appendChild(e);
-    		container.appendChild(hr);
-        */
+       document.addEventListener('DOMContentLoaded', function () {
+           if (!Notification) {
+             alert('Desktop notifications not available in your browser. Try Chromium.');
+             return;
+           }
+
+           if (Notification.permission !== "granted")
+             Notification.requestPermission();
+         });
+
+  		function outputNotifications(data) {
+        var text=data.data.agent.name+'<br>'+message;
+        if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+              }  else {
+              var notification = new Notification('blikai notification', {
+                icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+                body: text,
+              });
+              notification.onclick = function () {
+                window.open("http://stackoverflow.com/a/13328397/1269037");
+              };
+            }
   	  }
 
       }

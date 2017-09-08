@@ -48,6 +48,7 @@ a:hover {
 .link, .link > h1, .link > h2, .link > h3, .link > h4, .link > h5, .subheading {
   font-weight: 300;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .profile {

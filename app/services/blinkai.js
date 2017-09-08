@@ -79,7 +79,7 @@ define([
                         method: 'get'
                     };
 
-                $http(options).then(function (res) {
+                $http(options).then(function (res) { //console.log(res.data);
                     deferred.resolve({
                         entries: res.data
                     });

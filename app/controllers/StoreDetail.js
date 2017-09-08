@@ -19,7 +19,7 @@ define([
         $loadingOverlay.show();
 
         blinkaiService.getStoreDetail($scope.store_id).then(function (conversations) {
-          console.log(conversations);
+          //console.log(conversations);
         $scope.conversations = conversations;
         }).finally(function () {
             $loadingOverlay.hide();

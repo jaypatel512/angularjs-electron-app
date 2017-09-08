@@ -29,13 +29,15 @@
           <input type="number" id="inputPhone" name="phone" class="form-control" placeholder="Phone Number" required="" autofocus="">
         </div>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="register"  ng-disabled="!registerForm.$valid">Register Now
+      <loading-spinner loading="isLoading" class="text-center">
+      <button class="btn btn-lg btn-success btn-block" type="submit" value="register"  ng-disabled="!registerForm.$valid">Register Now
         !
       </button>
+      </loading-spinner>
     </form>
     <div class="row">
       <div class="col-left">
-        <a class="link" href="" ng-click="user_login()"><h4>Already a storeUser! Login here</h4></a>
+        <a class="link" href="" ng-click="user_login()"><h4>Login</h4></a>
       </div>
       <div class="col-right">
         <a class="gray link" href=""  ng-click="forgot_password()"><h4>Forgot Password</h4></a>
