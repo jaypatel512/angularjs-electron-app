@@ -3,6 +3,6 @@
   <h3 class="sub-header"> Activity Feed</h3>
     <div class="feed-item" ng-repeat="activity in activities.entries.data">
       <div class="date">{{activity.time}}</div>
-      <div class="text" ng-bind-html=" activity.message | to_trusted"></div>
+      <div class="text" ng-bind-html="activity.message | to_trusted"></div>
     </div>
 </div>

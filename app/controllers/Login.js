@@ -27,7 +27,7 @@ define([
                 });
             };
             $scope.user_register=function(){
-              $state.go('register');
+                $state.go('register');
             }
             $scope.user_login=function(){
               $state.go('login');

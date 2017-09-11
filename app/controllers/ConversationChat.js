@@ -62,7 +62,7 @@ define([
                 Notification.requestPermission();
               }  else {
               var notification = new Notification('blikai notification', {
-                icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+                icon: 'http://dashboard.blinkai.com/web_assets/img/blink_ai.png',
                 body: text,
               });
               notification.onclick = function () {
