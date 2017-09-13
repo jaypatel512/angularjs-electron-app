@@ -89,9 +89,9 @@ define([
             };
 
 
-        this.getconversationDetail=function(store_id,id){
-          var url = settings.blinkai + 'stores/' + store_id + '/conversations/'+ id;
-//          console.log(url);
+        this.getconversationDetail=function(id){
+          var url = settings.blinkai + 'conversations/'+ id + '/activities';
+          //console.log(url);
             var deferred = $q.defer(),
             options = {
                 url: url,
@@ -122,7 +122,7 @@ define([
               };
 
               $http(options).then(function (res) {
-                //console.log(res.data);
+                console.log(res.data);
                   deferred.resolve({'entries':res.data});
 
               }, deferred.reject);

@@ -12,9 +12,9 @@ function (app) {
         });
     app.filter('to_trusted', ['$sce', function($sce) {
        return function(text) {
-         text=text.replace("href='/web/admin/agent?id=596be51cd1ac664a6b85532d'",'ng-click="show_agent()"');
+         /*text=text.replace("href='/web/admin/agent?id=596be51cd1ac664a6b85532d'",'ng-click="show_agent()"');
          text=text.replace("href='/web/admin/store?id=596be51bd1ac664a6b855320'",'ng-click="show_store()"');
-         /*text=text.replace('/web/conversations?store=','show_conversation(');
+         text=text.replace('/web/conversations?store=','show_conversation(');
          text=text.replace('">',')">');
          text=text.replace('">',')">');
          text=text.replace('href=','ng-click=');
@@ -36,7 +36,7 @@ function (app) {
                 $state.go('login');
             });
 
-            $scope.openWindow=function(url) { 
+            $scope.openWindow=function(url) {
                 window.open(url, '_blank', 'location=no');
             }
         }

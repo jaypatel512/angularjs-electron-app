@@ -76,3 +76,8 @@
     bottom: 0;
     width: 100%;
 }
+
+.activity-feed .feed-item a{
+  text-decoration:none;
+  color:#007AB8;
+}
