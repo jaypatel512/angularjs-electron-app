@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" data-ng-controller="ConversationChatCtrl" data-ng-init="init()">
   <h3 class="page-header"><span class="icon icon-chat"></span> Conversations/ Conversation</h3>
   <div class="row-fluid">
     <div>{{conversations.entries.data[0].store.name}}</div>
@@ -17,11 +17,18 @@
     </div>
     <div class="panel-body" id="chat-panel">
       <ul class="chat" id="chatlist">
+        <li ng-repeat="list in conversationList">
+          <div ng-if="$odd" class="left clearfix">
 
+          </div>
+          <div ng-if="$even" class="right clearfix">
+
+          </div>
+
+
+          {{list}}
+        </li>
       </ul>
-    </div>
-    <div ng-repeat="message in messages">
-      {{message}}
     </div>
 
   </div>
@@ -33,18 +40,5 @@
       </div>
     </form>
   </div>
-      <!--<div class="col-sm-4 chat-user-profile">
-            <img class="img pull-left" src="https://s3.amazonaws.com/muasir/1488206041_human.png" style="margin-right:10px" width="80" height="80"><h3 style="margin-top: 0px;" class="text-limit"> 5125920917</h3>
-            <hr>
-            <div class="clearfix"></div>
-            <dl class="dl-horizontal">
-              <dt>Channel</dt>
-              <dd><i class="fa fa-sms" aria-hidden="true"></i> SMS</dd>
 
-              <dt>Started</dt>
-              <dd>Thu, Aug 3  @  11:56 AM</dd>
-              <dt>Store</dt>
-                <dd><a target="_blank" href="https://facebook.com/401589906871916/messages">Douglas Mcdonald Store</a></dd>
-            </dl>
-        </div>-->
 </div>

@@ -40,11 +40,12 @@ define([
 
         $scope.conversationDetail=function(id){  //console.log('this is test '+id);
           localStorageService.set('conversation_id',id);
-          blinkaiService.getconversationDetail(id).then(function (conversationList) {
+          $state.go('base.conversationChat')
+        /*  blinkaiService.getconversationDetail(id).then(function (conversationList) {
             console.log(conversationList);
             $scope.conversationList = conversationList;
             $state.go('base.conversationChat')
-          })
+          })*/
         }
     }
   ]);

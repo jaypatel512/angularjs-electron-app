@@ -48,7 +48,7 @@ define([
 
             this.getStores = function (url) {
                 url = url || settings.blinkai + 'stores';
-                //console.log(url);
+                console.log(url);
                 var deferred = $q.defer(),
                     options = {
                         url: url,
@@ -58,7 +58,7 @@ define([
                         method: 'get'
                     };
 
-                $http(options).then(function (res) {//console.log(res.data);
+                $http(options).then(function (res) {console.log(res.data);
                     deferred.resolve({
                         entries: res.data
                     });
@@ -69,7 +69,7 @@ define([
 
             this.getActivities = function (store_id) {
                 var url = settings.blinkai + 'stores/' + store_id + '/activities';
-                //console.log(url);
+                console.log(url);
                 var deferred = $q.defer(),
                     options = {
                         url: url,
@@ -91,7 +91,7 @@ define([
 
         this.getconversationDetail=function(id){
           var url = settings.blinkai + 'conversations/'+ id + '/activities';
-          //console.log(url);
+          console.log(url);
             var deferred = $q.defer(),
             options = {
                 url: url,
