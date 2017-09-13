@@ -80,4 +80,5 @@
 .activity-feed .feed-item a{
   text-decoration:none;
   color:#007AB8;
+  cursor: pointer;
 }
