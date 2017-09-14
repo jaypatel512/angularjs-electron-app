@@ -65,7 +65,7 @@
 .nav-group-item:active, .nav-group-item.active{background:none;}
 .pane{overflow: auto;margin-left: 221px;}
 .header{width:100%;position:fixed;}
-.conversation{margin-top:110px; width: auto;}
+.conversation{margin-top:100px; width: auto;}
 .table-striped span img{width:30px;}
 .reply-left{float:left;width:99.7%}
 .reply-right{float:left;width:5%;padding: 6px;
@@ -85,7 +85,7 @@
 
 
 /* chat section styling start here*/
-.chat-left{width:5%;text-align: center;}
-.chat-right{margin-left:5%;}
+.chat-left{width:60px;text-align: center;}
+.chat-right{margin-left:60px;}
 .header-section .left{float:left;margin-right:10px;font-weight: bold;}
 .header-section .right{}

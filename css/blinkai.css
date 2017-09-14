@@ -140,6 +140,7 @@ h1 {
   max-width: 350px;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 24px;
 }
 
 .navbar-brand {
@@ -366,3 +367,5 @@ h1 {
 #chat-panel::-webkit-scrollbar{
   width:0px;
 }
+
+.panel-heading{margin-bottom:20px;}

@@ -16,7 +16,7 @@ define([
 
       var socket = io.connect('http://localhost:9092');
       const container = document.getElementById('chatlist');
-
+      $scope.conversation=localStorageService.get('conversation');
       var init = function(){
     socket.emit('messages', {
             privateToken: localStorageService.get('privateToken'),
@@ -25,7 +25,7 @@ define([
             if (resp === false) {
               alert("We seemed to have some issues fetching old messages. Please try again");
             } else {
-              //console.log(resp);
+              console.log(resp);
               //$scope.conversationList=resp;
               container.innerHTML='';
              angular.forEach(resp, function(value, key){
@@ -77,49 +77,7 @@ define([
                 container.appendChild(li);
 
                 container.scrollIntoView(false);
-                /*
-                const li = document.createElement('li');
-                const span= document.createElement('span');
-                const img= document.createElement('img');
-                const maindiv=document.createElement('div');
 
-                if(key%2)
-                {
-                  li.className='right clearfix';
-                  span.className='chat-img pull-right';
-                  img.src=value.data.agent.profile;
-                  img.setAttribute('alt',value.data.agent.name);
-                  img.setAttribute('class','img-rounded img-responsive has-popover');
-                  img.setAttribute('width','40');
-                  img.setAttribute('height','40');
-                  maindiv.className='chat-body clearfix';
-                  const div=document.createElement('div');
-                  const strong=document.createElement('strong');
-                  strong.className='primary-font';
-                  div.appendChild(strong);
-                  maindiv.appendChild(div);
-
-                } else {
-                  li.className='left clearfix';
-                  span.className='chat-img pull-left';
-                  img.src=value.data.agent.profile;
-                  img.setAttribute('alt',value.data.agent.name);
-                  img.setAttribute('class','img-rounded img-responsive has-popover');
-                  img.setAttribute('width','40');
-                  img.setAttribute('height','40');
-                  maindiv.className='chat-body clearfix';
-                  const div=document.createElement('div');
-                  const strong=document.createElement('strong');
-                  strong.className='primary-font';
-                  div.appendChild(strong);
-                  maindiv.appendChild(div);
-                }
-
-                span.appendChild(img);
-                li.appendChild(span);
-                li.appendChild(maindiv);
-                container.appendChild(li);
-                */
              });
             }
           });
@@ -134,7 +92,7 @@ define([
         li.innerHTML = message;
         container.appendChild(li);*/
 
-        socket.on('notifications', eventHandler());
+        socket.on('notifications', eventHandlerChat());
         //console.log(localStorageService.get('conversation_id'));
         socket.emit('reply', {
           text: message,  // text
@@ -151,7 +109,7 @@ define([
           }
         });
 
-        function eventHandler() {
+        function eventHandlerChat() {
     			return function (data) {console.log(data);
       			  outputNotifications(data);
       			}

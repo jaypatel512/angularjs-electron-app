@@ -11,8 +11,8 @@
   <div class="panel panel-primary chat-box">
     <div class="panel-heading" id="accordion">
       <span class="text-limit">
-      <i class="fa fa-sms" aria-hidden="true"></i> SMS Conversation with
-      <b>[5125920917]</b>
+      <i class="fa fa-sms" aria-hidden="true"></i> <span ng-if="conversation.channel=='fb'">Facebook</span> <span ng-if="conversation.channel=='sms'">SMS</span> Conversation with
+      <b>[{{conversation.user.identifier}}]</b>
       </span>
     </div>
     <div class="panel-body" id="chat-panel">

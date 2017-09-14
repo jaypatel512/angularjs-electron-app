@@ -38,8 +38,9 @@ define([
              return Math.ceil($scope.conversations.entries.data.length/$scope.pageSize);
          }
 
-        $scope.conversationDetail=function(id){  //console.log('this is test '+id);
-          localStorageService.set('conversation_id',id);
+        $scope.conversationDetail=function(conversation){  //console.log('this is test '+id);
+          localStorageService.set('conversation_id',conversation.id);
+          localStorageService.set('conversation',conversation);
           $state.go('base.conversationChat')
         /*  blinkaiService.getconversationDetail(id).then(function (conversationList) {
             console.log(conversationList);

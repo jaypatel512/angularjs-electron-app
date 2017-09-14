@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}" ng-click="conversationDetail(conversation.id)">
+    <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}" ng-click="conversationDetail(conversation)">
       <td><span><img src="{{conversation.user.image}}" alt=""/> {{conversation.user.identifier}}</span></td>
       <td></td>
       <td></td>
