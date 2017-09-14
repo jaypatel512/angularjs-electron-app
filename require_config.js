@@ -9,6 +9,7 @@ var require = {
         'ui-bootstrap': '../node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.min',
         'ng-loading-overlay': '../node_modules/ng-loading-overlay/src/ng-loading-overlay.min',
         'metis': '../node_modules/metismenu/dist/metisMenu.min',
+        'angular-momentjs': '../node_modules/angular-momentjs/angular-momentjs',
       
     },
     shim: {
@@ -33,6 +34,10 @@ var require = {
             exports: 'uibs'
         },
         'ng-loading-overlay': {
+            deps: ['angular']
+        }
+        ,
+        'angular-momentjs': {
             deps: ['angular']
         }
     },

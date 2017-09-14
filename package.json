@@ -9,6 +9,7 @@
     "almond": "~0.3.1",
     "angular": "~1.4.5",
     "angular-local-storage": "~0.2.2",
+    "angular-momentjs": "^0.2.2",
     "angular-socket-io": "^0.7.0",
     "angular-ui-bootstrap": "^0.13.4",
     "angular-ui-router": "~0.2.15",

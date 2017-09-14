@@ -82,3 +82,10 @@
   color:#007AB8;
   cursor: pointer;
 }
+
+
+/* chat section styling start here*/
+.chat-left{width:5%;text-align: center;}
+.chat-right{margin-left:5%;}
+.header-section .left{float:left;margin-right:10px;font-weight: bold;}
+.header-section .right{}

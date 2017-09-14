@@ -11,12 +11,12 @@ define([
     '$modal',
     'blinkaiService',
     'localStorageService',
-    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService) {
+    '$moment',
+    function ($scope,$state, $loadingOverlay, $modal, blinkaiService, localStorageService,$moment) {
 
       var socket = io.connect('http://localhost:9092');
       const container = document.getElementById('chatlist');
       var init = function(){
-
     socket.emit('messages', {
             privateToken: localStorageService.get('privateToken'),
             id: localStorageService.get('conversation_id')
@@ -25,12 +25,100 @@ define([
               alert("We seemed to have some issues fetching old messages. Please try again");
             } else {
               //console.log(resp);
-            $scope.conversationList=resp;
-            /* angular.forEach(resp, function(value, key){
+              //$scope.conversationList=resp;
+              container.innerHTML='';
+             angular.forEach(resp, function(value, key){
                 const li = document.createElement('li');
-                li.innerHTML = value.data.text;
+                // left div start
+                const leftdiv=document.createElement('div');
+                leftdiv.className='chat-left image clearfix pull-left';
+                const image=document.createElement('img');
+                image.src=value.data.agent.profile;
+                image.setAttribute('alt',value.data.agent.name);
+                image.setAttribute('class','img-rounded img-responsive has-popover');
+                image.setAttribute('width','40');
+                image.setAttribute('height','40');
+                leftdiv.appendChild(image);
+                // left div end
+
+                // right div start
+                const rightdiv=document.createElement('div');
+                rightdiv.className='chat-right clearfix chat-body';
+
+                li.appendChild(leftdiv);
+
+                const namespan=document.createElement('span');
+                namespan.className='username left image';
+                namespan.innerHTML=value.data.agent.name;
+
+                const timespan=document.createElement('span');
+                timespan.className='time right date';
+
+                timespan.innerHTML=$moment(value.data.date).format('ddd , MMM DD @ LT');
+
+                const headerdiv=document.createElement('div');
+                const clockspan=document.createElement('span');
+                clockspan.className='fa fa-clock-o';
+
+                headerdiv.className='header-section';
+                headerdiv.appendChild(namespan);
+                headerdiv.appendChild(clockspan);
+                headerdiv.appendChild(timespan);
+                rightdiv.appendChild(headerdiv);
+
+                const bodydiv=document.createElement('div');
+                bodydiv.className='body-section';
+                bodydiv.innerHTML=value.data.text;
+                rightdiv.appendChild(bodydiv);
+                // right div end
+
+                li.appendChild(rightdiv);
                 container.appendChild(li);
-             });*/
+
+                /*
+                const li = document.createElement('li');
+                const span= document.createElement('span');
+                const img= document.createElement('img');
+                const maindiv=document.createElement('div');
+
+                if(key%2)
+                {
+                  li.className='right clearfix';
+                  span.className='chat-img pull-right';
+                  img.src=value.data.agent.profile;
+                  img.setAttribute('alt',value.data.agent.name);
+                  img.setAttribute('class','img-rounded img-responsive has-popover');
+                  img.setAttribute('width','40');
+                  img.setAttribute('height','40');
+                  maindiv.className='chat-body clearfix';
+                  const div=document.createElement('div');
+                  const strong=document.createElement('strong');
+                  strong.className='primary-font';
+                  div.appendChild(strong);
+                  maindiv.appendChild(div);
+
+                } else {
+                  li.className='left clearfix';
+                  span.className='chat-img pull-left';
+                  img.src=value.data.agent.profile;
+                  img.setAttribute('alt',value.data.agent.name);
+                  img.setAttribute('class','img-rounded img-responsive has-popover');
+                  img.setAttribute('width','40');
+                  img.setAttribute('height','40');
+                  maindiv.className='chat-body clearfix';
+                  const div=document.createElement('div');
+                  const strong=document.createElement('strong');
+                  strong.className='primary-font';
+                  div.appendChild(strong);
+                  maindiv.appendChild(div);
+                }
+
+                span.appendChild(img);
+                li.appendChild(span);
+                li.appendChild(maindiv);
+                container.appendChild(li);
+                */
+             });
             }
           });
       };
@@ -39,10 +127,12 @@ define([
 
       $scope.chatMessage=function(message){
         const container = document.getElementById('chatlist');
-        const li = document.createElement('li');
-        // You would want to expand this out to include pertinent attributes, and timestamps, etc...
+
+
+        /*
         li.innerHTML = message;
-        container.appendChild(li);
+        container.appendChild(li);*/
+
         socket.on('notifications', eventHandler());
         //console.log(localStorageService.get('conversation_id'));
         socket.emit('reply', {
@@ -61,7 +151,7 @@ define([
         });
 
         function eventHandler() {
-    			return function (data) {
+    			return function (data) {console.log(data);
       			  outputNotifications(data);
       			}
 		     }
@@ -88,12 +178,57 @@ define([
               notification.onclick = function () {
                 window.open("http://stackoverflow.com/a/13328397/1269037");
               };
+
             }
-  	  }
 
-      }
+            // left div start
+            const li = document.createElement('li');
+            const leftdiv=document.createElement('div');
+            leftdiv.className='chat-left image clearfix pull-left';
+            const image=document.createElement('img');
+            image.src=data.data.agent.profile;
+            image.setAttribute('alt',data.data.agent.name);
+            image.setAttribute('class','img-rounded img-responsive has-popover');
+            image.setAttribute('width','40');
+            image.setAttribute('height','40');
+            leftdiv.appendChild(image);
+            // left div end
 
+            // right div start
+            const rightdiv=document.createElement('div');
+            rightdiv.className='chat-right clearfix chat-body';
 
+            li.appendChild(leftdiv);
+
+            const namespan=document.createElement('span');
+            namespan.className='username left image';
+            namespan.innerHTML=data.data.agent.name;
+
+            const timespan=document.createElement('span');
+            timespan.className='time right date';
+
+            timespan.innerHTML=$moment(data.data.date).format('ddd , MMM DD @ LT');
+
+            const headerdiv=document.createElement('div');
+            const clockspan=document.createElement('span');
+            clockspan.className='fa fa-clock-o';
+
+            headerdiv.className='header-section';
+            headerdiv.appendChild(namespan);
+            headerdiv.appendChild(clockspan);
+            headerdiv.appendChild(timespan);
+            rightdiv.appendChild(headerdiv);
+
+            const bodydiv=document.createElement('div');
+            bodydiv.className='body-section';
+            bodydiv.innerHTML=message;
+            rightdiv.appendChild(bodydiv);
+            // right div end
+
+            li.appendChild(rightdiv);
+            container.appendChild(li);
+  	       }
+         }
     }
   ]);
 });

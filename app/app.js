@@ -5,7 +5,8 @@ define([
   'ui-bootstrap',
   'ui-router',
   'angular-local-storage',
-  'ng-loading-overlay'
+  'ng-loading-overlay',
+  'angular-momentjs'
 ], function (angular) {
   'use strict';
   // the app with its used plugins
@@ -14,7 +15,7 @@ define([
     'LocalStorageModule',
     'ui.bootstrap',
     'ngLoadingOverlay',
-
+    'angular-momentjs',
   ]);
 
   app.directive('ngEnter', function() {
