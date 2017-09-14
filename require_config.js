@@ -10,7 +10,7 @@ var require = {
         'ng-loading-overlay': '../node_modules/ng-loading-overlay/src/ng-loading-overlay.min',
         'metis': '../node_modules/metismenu/dist/metisMenu.min',
         'angular-momentjs': '../node_modules/angular-momentjs/angular-momentjs',
-      
+              
     },
     shim: {
         'metis': {

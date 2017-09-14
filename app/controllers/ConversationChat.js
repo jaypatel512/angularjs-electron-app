@@ -16,6 +16,7 @@ define([
 
       var socket = io.connect('http://localhost:9092');
       const container = document.getElementById('chatlist');
+
       var init = function(){
     socket.emit('messages', {
             privateToken: localStorageService.get('privateToken'),
@@ -75,6 +76,7 @@ define([
                 li.appendChild(rightdiv);
                 container.appendChild(li);
 
+                container.scrollIntoView(false);
                 /*
                 const li = document.createElement('li');
                 const span= document.createElement('span');
@@ -127,7 +129,6 @@ define([
 
       $scope.chatMessage=function(message){
         const container = document.getElementById('chatlist');
-
 
         /*
         li.innerHTML = message;
@@ -227,6 +228,8 @@ define([
 
             li.appendChild(rightdiv);
             container.appendChild(li);
+
+            container.scrollIntoView(false);
   	       }
          }
     }

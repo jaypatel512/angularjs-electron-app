@@ -6,7 +6,7 @@ define([
   'ui-router',
   'angular-local-storage',
   'ng-loading-overlay',
-  'angular-momentjs'
+  'angular-momentjs',
 ], function (angular) {
   'use strict';
   // the app with its used plugins
@@ -31,7 +31,6 @@ define([
               });
           };
       });
-
 
   app.factory('socket', function ($rootScope) {
   var socket = io.connect('http://localhost:9092');
