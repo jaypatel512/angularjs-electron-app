@@ -1,29 +1,22 @@
-<div class="header" data-ng-controller="ConversationChatCtrl" data-ng-init="init()">
-  <h3 class="page-header"><span class="icon icon-chat"></span> Conversations/ Conversation</h3>
-  <div class="row-fluid">
-    <div>{{conversations.entries.data[0].store.name}}</div>
-    <!--<h3>AUTOPILOT <div class="toggle btn btn-primary" data-toggle="toggle" style="width: 63px; height: 34px;"><input id="toggle-autopilot" type="checkbox" checked="" data-toggle="toggle" data-onstyle="primary" data-offstyle="danger"><div class="toggle-group"><label class="btn btn-primary toggle-on">On</label><label class="btn btn-danger active toggle-off">Off</label><span class="toggle-handle btn btn-default"></span></div></div></h3>-->
+<div class="header-main">
+  <div class="header" data-ng-controller="ConversationChatCtrl" data-ng-init="init()">
+    <h3 class="page-header"><span class="icon icon-chat"></span> Conversations/ Conversation</h3>
+    <div class="row-fluid">
+      <div>{{conversations.entries.data[0].store.name}}</div>
+    </div>
+  </div>
+  <div class="panel-heading" id="accordion">
+    <span class="text-limit">
+    <i class="fa fa-sms" aria-hidden="true"></i> <span ng-if="conversation.channel=='fb'">Facebook</span> <span ng-if="conversation.channel=='sms'">SMS</span> Conversation with
+    <b>[{{conversation.user.identifier}}]</b>
+    </span>
   </div>
 </div>
 
 <div class="conversation">
   <div class="panel panel-primary chat-box">
-    <div class="panel-heading" id="accordion">
-      <span class="text-limit">
-      <i class="fa fa-sms" aria-hidden="true"></i> <span ng-if="conversation.channel=='fb'">Facebook</span> <span ng-if="conversation.channel=='sms'">SMS</span> Conversation with
-      <b>[{{conversation.user.identifier}}]</b>
-      </span>
-    </div>
     <div class="panel-body" id="chat-panel">
       <ul class="chat" id="chatlist">
-        <!--<li ng-repeat="list in conversationList">
-          <div ng-if="$odd" class="left clearfix">
-            {{list}}
-          </div>
-          <div ng-if="$even" class="right clearfix">
-            {{list}}
-          </div>
-        </li>-->
       </ul>
     </div>
 

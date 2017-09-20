@@ -64,8 +64,8 @@
 .nav-group-title{color:#fff!important;}
 .nav-group-item:active, .nav-group-item.active{background:none;}
 .pane{overflow: hidden;margin-left: 221px;}
-.header{width:100%;position:fixed;height: 15%;display:block;}
-.conversation{margin-top: 10%; width: auto;top:0px;}
+.header-main{width:100%;position:fixed;display:block;overflow: hidden;}
+.conversation{margin-top: 120px; width: auto;top:0px;overflow: hidden;position:fixed;}
 .table-striped img{width:30px;float:left;margin-right:5px;vertical-align: middle;}
 .image-left{float:left;vertical-align: middle;}
 .text-left{padding: 2%;}
@@ -92,3 +92,6 @@
 .header-section .left{float:left;margin-right:10px;font-weight: bold;}
 .header-section .right{}
 .table-striped td,.table-striped td div{cursor:pointer;}
+.toolbar-footer{z-index:1;}
+.chat-box{height:600px;}
+.chat-box .panel-body{height:95% !important;}
