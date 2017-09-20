@@ -31,7 +31,7 @@ function (app) {
         'blinkaiService',
         function ($scope,$q, $location, $state, localStorageService, blinkaiService) {
             blinkaiService.me().then(function () {
-                $state.go('base.dashboard');
+                //$state.go('base.dashboard');
             }, function () {
                 $state.go('login');
             });
