@@ -63,17 +63,19 @@
 .col-right{width:50%;float:right;text-align:center;}
 .nav-group-title{color:#fff!important;}
 .nav-group-item:active, .nav-group-item.active{background:none;}
-.pane{overflow: auto;margin-left: 221px;}
-.header{width:100%;position:fixed;}
-.conversation{margin-top:100px; width: auto;}
-.table-striped span img{width:30px;}
+.pane{overflow: hidden;margin-left: 221px;}
+.header{width:100%;position:fixed;height: 15%;display:block;}
+.conversation{margin-top: 10%; width: auto;top:0px;}
+.table-striped img{width:30px;float:left;margin-right:5px;vertical-align: middle;}
+.image-left{float:left;vertical-align: middle;}
+.text-left{padding: 2%;}
 .reply-left{float:left;width:99.7%}
 .reply-right{float:left;width:5%;padding: 6px;
     border-radius: 0px;}
 
 #chat-footer{
   position: fixed;
-    bottom: 0;
+    bottom: 22px;
     width: 100%;
 }
 
@@ -89,3 +91,4 @@
 .chat-right{margin-left:60px;}
 .header-section .left{float:left;margin-right:10px;font-weight: bold;}
 .header-section .right{}
+.table-striped td,.table-striped td div{cursor:pointer;}

@@ -2,7 +2,6 @@
   <h3 class="page-header"><span class="icon icon-chat"></span> Conversations</h3>
   <div class="row-fluid">
     <div>{{conversations.entries.data[0].store.name}}</div>
-    <br>
   </div>
 </div>
 
@@ -11,17 +10,17 @@
   <thead>
     <tr>
       <th>Identifier</th>
-      <th>Message</th>
       <th>Started</th>
       <th>Channel</th>
+      <th>Autopilot</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}" ng-click="conversationDetail(conversation)">
-      <td><span><img src="{{conversation.user.image}}" alt=""/> {{conversation.user.identifier}}</span></td>
-      <td></td>
-      <td></td>
-      <td>{{conversation.channelIcon}}</td>
+      <td  valign="middle"> <div class="image-left"><img src="{{conversation.user.image}}" alt=""/></div><div class="text-left"> {{conversation.user.identifier}}</div> </td>
+      <td  valign="middle"></td>
+      <td  valign="middle">{{conversation.channelIcon}}</td>
+      <td  valign="middle">{{conversation.autopilot}}</td>
     </tr>
   </tbody>
 </table>

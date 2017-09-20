@@ -75,7 +75,6 @@ define([
 
                 li.appendChild(rightdiv);
                 container.appendChild(li);
-
                 container.scrollIntoView(false);
 
              });
@@ -186,7 +185,6 @@ define([
 
             li.appendChild(rightdiv);
             container.appendChild(li);
-
             container.scrollIntoView(false);
   	       }
          }

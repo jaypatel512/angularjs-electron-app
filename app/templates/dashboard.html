@@ -6,6 +6,6 @@
       <div ng-if="activity.type=='agent.added'" class="text">
       Agent <a href="" ng-click="getAgentDetail(activity.activity.agentId)">{{activity.activity.agentUsername}}</a> was added to <a href=""  ng-click="getStoreDetailFunction(activity.activity.storeId)">{{activity.activity.storeName}}</a> Store
       </div>
-      <div ng-if="activity.type=='conversation.created'" class="text">A new conversation just started by <a href="" ng-click="getConversationDetail(activity.activity.conversationId)">{{activity.activity.userName}}</a> in <a href=""  ng-click="getStoreDetail(activity.activity.storeId)">{{activity.activity.storeName}}</a> on {{activity.activity.channel}}</div>
+      <div ng-if="activity.type=='conversation.created'" class="text">A new conversation just started by <a href="" ng-click="getConversationDetail(activity.activity.conversationId)">{{activity.activity.userName}}</a> in <a href=""  ng-click="getStoreDetailFunction(activity.activity.storeId)">{{activity.activity.storeName}}</a> on {{activity.activity.channel}}</div>
     </div>
 </div>
