@@ -1,4 +1,10 @@
 <div class="pane-sm sidebar">
+  <div class="pane-sm-store sidebar-store">
+    <h5 class="nav-group-title"></h5>
+    <a class="nav-group-item-store active" ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)">{{store.name}}
+    </a>
+  </div>
+
   <nav class="nav-group">
     <h5 class="nav-group-title">User</h5>
     <a class="nav-group-item active">
@@ -12,10 +18,11 @@
 
     <a class="nav-group-item active" ng-click="dashboard()"><span class="icon icon-home"></span>Dashboard</a>
 
-    <h5 class="nav-group-title">Stores</h5>
+    <!--<h5 class="nav-group-title">Stores</h5>
     <a class="nav-group-item active" ng-repeat="store in stores.entries.data" ng-click="getStoreDetailFunction(store.id)"><span class="icon icon-comment"></span>{{store.name}}
     </a>
     <a class="nav-group-item active" ng-click="dashboard()"><span class="icon icon-chat"></span> Conversation</a>
+    -->
   </nav>
 
 </div>

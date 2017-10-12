@@ -21,7 +21,7 @@
     <tr ng-repeat="conversation in conversations.entries.data" id="{{conversation.user.id}}" ng-click="conversationDetail(conversation)">
       <td  valign="middle"> <div class="image-left"><img src="{{conversation.user.image}}" alt=""/></div><div class="text-left"> {{conversation.user.identifier}}</div> </td>
       <td  valign="middle"></td>
-      <td  valign="middle">{{conversation.channelIcon}}</td>
+      <td  valign="middle"><i style="margin-right: 5px;" class="fa fa-2x fa-{{conversation.channelIcon}}" aria-hidden="true" title="{{conversation.channel}}"></i></td>
       <td  valign="middle">{{conversation.autopilot}}</td>
     </tr>
   </tbody>

@@ -18,7 +18,7 @@ define([
                   if (res.data.success == false) {
                     return deferred.reject(res.data.error);
                   }
-
+                  console.log(res.data);
                   localStorageService.set('privateToken', res.data.data.privateToken);
                   localStorageService.set('username', res.data.data.username);
                   localStorageService.set('avatar', res.data.data.avatar_url);
