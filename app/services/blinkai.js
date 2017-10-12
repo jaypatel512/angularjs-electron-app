@@ -18,9 +18,10 @@ define([
                   if (res.data.success == false) {
                     return deferred.reject(res.data.error);
                   }
-                  console.log(res.data);
+                  //console.log(res.data);
                   localStorageService.set('privateToken', res.data.data.privateToken);
                   localStorageService.set('username', res.data.data.username);
+                  localStorageService.set('name', res.data.data.name);
                   localStorageService.set('avatar', res.data.data.avatar_url);
                   deferred.resolve(res.data);
                 }, deferred.reject);
@@ -133,6 +134,7 @@ define([
             this.logout = function () {
                 localStorageService.remove('privateToken');
                 localStorageService.remove('username');
+                localStorageService.remove('name');
                 localStorageService.remove('avatar');
             };
         }

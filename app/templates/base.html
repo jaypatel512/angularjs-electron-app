@@ -7,10 +7,10 @@
 
   <nav class="nav-group">
     <h5 class="nav-group-title">User</h5>
-    <a class="nav-group-item active">
-      <span class="icon icon-user"></span>
-        {{username}}
-    </a>
+    <div class="user-name">
+      <span class="user-left"><img src="http://api.adorable.io/avatars/40/{{username}}"></span>
+        <span class="user-right">{{name}}</span>
+    </div>
     <a class="nav-group-item active"  ng-click="logout()">
       <span class="icon icon-logout"></span>
       Logout

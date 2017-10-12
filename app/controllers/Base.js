@@ -25,6 +25,7 @@ define([
     'blinkaiService',
     function ($scope, $state,$loadingOverlay, localStorageService, blinkaiService) {
         var oldSearchString;
+        $scope.name = localStorageService.get('name');
         $scope.privateToken = localStorageService.get('privateToken');
         $scope.username = localStorageService.get('username');
         $scope.avatar = localStorageService.get('avatar');
